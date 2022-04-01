@@ -1,0 +1,46 @@
+{
+  "name": "svelte-ts",
+  "version": "1.0.0",
+  "description": "An Electron application with Svelte and TypeScript",
+  "main": "./out/main/index.js",
+  "author": "example.com",
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
+    "typecheck": "tsc --noEmit",
+    "svelte-check": "svelte-check --tsconfig ./tsconfig.json",
+    "start": "electron-vite preview",
+    "dev": "electron-vite dev",
+    "build": "tsc --noEmit && electron-vite build",
+    "postinstall": "electron-builder install-app-deps",
+    "build:win": "npm run build && electron-builder --win --config",
+    "build:mac": "npm run build && electron-builder --mac --config",
+    "build:linux": "npm run build && electron-builder --linux --config"
+  },
+  "dependencies": {
+    "@electron-toolkit/preload": "^1.0.1",
+    "@electron-toolkit/utils": "^1.0.2"
+  },
+  "devDependencies": {
+    "@electron-toolkit/tsconfig": "^1.0.1",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.40",
+    "@types/node": "16.11.22",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
+    "electron": "^17.3.1",
+    "electron-builder": "^22.14.13",
+    "electron-notarize": "^1.2.1",
+    "electron-vite": "^1.0.2",
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-svelte3": "^3.4.1",
+    "prettier": "^2.6.1",
+    "svelte": "^3.46.4",
+    "svelte-check": "^2.2.7",
+    "svelte-preprocess": "^4.9.8",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.5",
+    "vite": "^2.9.1"
+  }
+}

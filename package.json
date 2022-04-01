@@ -1,0 +1,29 @@
+{
+  "name": "@quick-start/monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An easy way to start a front-end project",
+  "license": "MIT",
+  "author": "Alex Wei<https://github.com/alex8088>",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "format": "prettier --write .",
+    "snapshot:electron": "cd packages/create-electron && npm run snapshot"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged",
+    "commit-msg": "node scripts/verifyCommit.js $1"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "lint-staged": "^12.1.7",
+    "picocolors": "^1.0.0",
+    "prettier": "^2.5.1",
+    "simple-git-hooks": "^2.7.0",
+    "zx": "^4.3.0"
+  }
+}

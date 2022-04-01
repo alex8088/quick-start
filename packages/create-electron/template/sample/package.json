@@ -1,0 +1,29 @@
+{
+  "name": "sample",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "./src/main.js",
+  "author": "example.com",
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint --ext .js .",
+    "dev": "electron .",
+    "postinstall": "electron-builder install-app-deps",
+    "build:win": "electron-builder --win --config",
+    "build:mac": "electron-builder --mac --config",
+    "build:linux": "electron-builder --linux --config"
+  },
+  "dependencies": {
+    "@electron-toolkit/preload": "^1.0.1",
+    "@electron-toolkit/utils": "^1.0.2"
+  },
+  "devDependencies": {
+    "electron": "^17.3.1",
+    "electron-builder": "^22.14.13",
+    "electron-notarize": "^1.2.1",
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.1"
+  }
+}

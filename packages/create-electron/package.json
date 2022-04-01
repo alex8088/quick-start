@@ -1,0 +1,43 @@
+{
+  "name": "@quick-start/create-electron",
+  "version": "1.0.0",
+  "description": "An easy way to start an Electron project",
+  "main": "index.js",
+  "bin": {
+    "create-electron": "index.js"
+  },
+  "files": [
+    "index.js",
+    "template",
+    "utils"
+  ],
+  "scripts": {
+    "snapshot": "zx ./scripts/snapshot.mjs"
+  },
+  "keywords": [
+    "electron",
+    "vite",
+    "vue",
+    "react",
+    "svelte",
+    "template",
+    "boilerplate"
+  ],
+  "author": "Alex Wei<https://github.com/alex8088>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex8088/quick-start.git",
+    "directory": "packages/create-electron"
+  },
+  "bugs": {
+    "url": "https://github.com/alex8088/quick-start/issues"
+  },
+  "homepage": "https://github.com/alex8088/quick-start/tree/master/packages/create-electron#readme",
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "kolorist": "^1.5.1",
+    "minimist": "^1.2.5",
+    "prompts": "^2.4.2"
+  }
+}
