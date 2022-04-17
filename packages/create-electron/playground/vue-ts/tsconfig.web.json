@@ -7,6 +7,12 @@
     "src/preload/*.d.ts"
   ],
   "compilerOptions": {
-    "composite": true
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@renderer/*": [
+        "src/renderer/src/*"
+      ]
+    }
   }
 }
