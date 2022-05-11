@@ -1,0 +1,39 @@
+{
+  "name": "@quick-start/create-docs",
+  "version": "1.0.0-alpha.0",
+  "description": "An easy way to generate a static site",
+  "main": "index.js",
+  "bin": {
+    "create-docs": "index.js"
+  },
+  "files": [
+    "index.js",
+    "template",
+    "utils"
+  ],
+  "scripts": {
+    "snapshot": "zx ./scripts/snapshot.mjs"
+  },
+  "keywords": [
+    "vitepress",
+    "vue",
+    "docs",
+    "site"
+  ],
+  "author": "Alex Wei<https://github.com/alex8088>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex8088/quick-start.git",
+    "directory": "packages/create-docs"
+  },
+  "bugs": {
+    "url": "https://github.com/alex8088/quick-start/issues"
+  },
+  "homepage": "https://github.com/alex8088/quick-start/tree/master/packages/create-docs#readme",
+  "dependencies": {
+    "kolorist": "^1.5.1",
+    "minimist": "^1.2.5",
+    "prompts": "^2.4.2"
+  }
+}

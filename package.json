@@ -8,7 +8,8 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "format": "prettier --write .",
-    "snapshot:electron": "cd packages/create-electron && npm run snapshot"
+    "snapshot:electron": "cd packages/create-electron && npm run snapshot",
+    "snapshot:docs": "cd packages/create-docs && npm run snapshot"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged",

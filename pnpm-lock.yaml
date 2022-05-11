@@ -16,6 +16,16 @@ importers:
       simple-git-hooks: 2.7.0
       zx: 4.3.0
 
+  packages/create-docs:
+    specifiers:
+      kolorist: ^1.5.1
+      minimist: ^1.2.5
+      prompts: ^2.4.2
+    dependencies:
+      kolorist: 1.5.1
+      minimist: 1.2.5
+      prompts: 2.4.2
+
   packages/create-electron:
     specifiers:
       js-yaml: ^4.1.0
