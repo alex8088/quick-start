@@ -4,9 +4,6 @@ An easy way to generate a static site
 
 ## Usage
 
-> **Compatibility Note:**
-> Some templates require a higher Node.js version to work, please upgrade if your package manager warns about it.
-
 With npm:
 
 ```bash
