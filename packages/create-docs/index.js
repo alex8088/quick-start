@@ -4,7 +4,7 @@ const fs = require('fs')
 const path = require('path')
 const minimist = require('minimist')
 const prompts = require('prompts')
-const { red, reset } = require('kolorist')
+const { red, green, gray, reset } = require('kolorist')
 const {
   copy,
   emptyDir,
@@ -14,6 +14,19 @@ const {
   writeFile
 } = require('./utils/fsExtra')
 
+const THEMES = [
+  {
+    name: 'vue',
+    value: '-vue',
+    color: green
+  },
+  {
+    name: 'default',
+    value: '',
+    color: gray
+  }
+]
+
 const DEFAULT_PRO_NAME = 'my-docs'
 
 async function init() {
@@ -22,6 +35,7 @@ async function init() {
 
   let targetDir = argv._[0]
   let ts = argv.ts
+  let theme = argv.theme
 
   let skip = argv.skip || false
 
@@ -62,6 +76,22 @@ async function init() {
         validate: (dir) => isValidPackageName(dir) || 'Invalid package.json name'
       },
       {
+        name: 'vitepressTheme',
+        type: skip || (theme && THEMES.some((t) => t.name === theme)) ? null : 'select',
+        message:
+          typeof theme === 'string' && !THEMES.includes(theme)
+            ? reset(`"${theme}" isn't a valid theme. Please choose from below: `)
+            : reset('Select a theme:'),
+        initial: 0,
+        choices: THEMES.map((theme) => {
+          const frameworkColor = theme.color
+          return {
+            title: frameworkColor(theme.name),
+            value: theme.value
+          }
+        })
+      },
+      {
         name: 'needsTypeScript',
         type: () => (skip || ts ? null : 'toggle'),
         message: 'Add TypeScript?',
@@ -75,7 +105,12 @@ async function init() {
     return
   }
 
-  const { shouldOverwrite = skip, packageName = targetDir, needsTypeScript = ts } = result
+  let {
+    shouldOverwrite = skip,
+    packageName = targetDir,
+    needsTypeScript = ts,
+    vitepressTheme
+  } = result
 
   const root = path.join(cwd, targetDir)
 
@@ -85,7 +120,9 @@ async function init() {
     fs.mkdirSync(root)
   }
 
-  const template = needsTypeScript ? 'docs-ts' : 'docs'
+  if (skip) vitepressTheme = theme ? `-${theme}` : ''
+
+  const template = `docs${vitepressTheme}${needsTypeScript ? '-ts' : ''}`
 
   console.log(`\nScaffolding project in ${root}...`)
 
@@ -108,7 +145,6 @@ async function init() {
   readme = `# ${packageName}
 
   ${readme}
-
   `
   writeFile(readmeFile, readme)
 

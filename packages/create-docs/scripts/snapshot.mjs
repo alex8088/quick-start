@@ -10,3 +10,5 @@ cd(playgroundDir)
 
 await $`node ${bin} docs --skip`
 await $`node ${bin} docs-ts --ts --skip`
+await $`node ${bin} docs-vue --theme vue --skip`
+await $`node ${bin} docs-vue-ts --theme vue --ts --skip`
