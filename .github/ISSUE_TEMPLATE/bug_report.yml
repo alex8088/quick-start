@@ -21,6 +21,7 @@ body:
       description: Select the used Scaffolding
       options:
         - create-electron
+        - create-docs
     validations:
       required: true
   - type: dropdown
