@@ -12,7 +12,9 @@ const commitRE =
 if (!commitRE.test(msg)) {
   console.log()
   console.error(
-    `  ${colors.bgRed.white(' ERROR ')} ${colors.red(`invalid commit message format.`)}\n\n` +
+    `  ${colors.bgRed(colors.white(' ERROR '))} ${colors.red(
+      `invalid commit message format.`
+    )}\n\n` +
       colors.red(
         `  Proper commit message format is required for automated changelog generation. Examples:\n\n`
       ) +
