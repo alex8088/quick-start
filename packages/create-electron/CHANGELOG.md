@@ -1,3 +1,7 @@
+### v1.0.2 (_2022-05-28_)
+
+- fix: run build error in js template
+
 ### v1.0.1 (_2022-04-17_)
 
 - chore: remove vscode renderer debug settings
