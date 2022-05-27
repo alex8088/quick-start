@@ -19,12 +19,6 @@ With Yarn:
 $ yarn create @quick-start/electron
 ```
 
-With pnpm:
-
-```bash
-$ pnpm create @quick-start/electron
-```
-
 Then follow the prompts!
 
 You can also directly specify the project name and the template you want to use via additional command line options. For example, to scaffold an Electrn + Vue project, run:
@@ -38,9 +32,6 @@ npm create @quick-start/electron my-app -- --template vue
 
 # yarn
 yarn create @quick-start/electron my-app --template vue
-
-# pnpm
-pnpm create @quick-start/electron my-app -- --template vue
 ```
 
 Currently supported template presets include:
