@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 /**
- * @type {import('vitepress').DefaultTheme.SideBarGroup[]}
+ * @type {import('vitepress').DefaultTheme.SidebarGroup[]}
  */
 const guideSidebar = [
   {
@@ -22,7 +22,7 @@ const guideSidebar = [
 ]
 
 /**
- * @type {import('vitepress').DefaultTheme.SideBar}
+ * @type {import('vitepress').DefaultTheme.Sidebar}
  */
 const sidebar = {
   '/guide': guideSidebar
