@@ -1,12 +1,12 @@
 import { defineConfig } from 'vitepress'
 
 /**
- * @type {import('vitepress').DefaultTheme.SideBarConfig}
+ * @type {import('vitepress').DefaultTheme.SideBarGroup[]}
  */
 const guideSidebar = [
   {
     text: 'Guide',
-    children: [
+    items: [
       { text: 'Introduction', link: '/guide/introduction' },
       { text: 'Getting Started', link: '/guide/getting-started' },
       { text: 'Theme', link: '/guide/theme' }
@@ -14,7 +14,7 @@ const guideSidebar = [
   },
   {
     text: 'Components',
-    children: [
+    items: [
       { text: 'Button', link: '/guide/button-component' },
       { text: 'Link', link: '/guide/link-component' }
     ]
@@ -22,7 +22,7 @@ const guideSidebar = [
 ]
 
 /**
- * @type {import('vitepress').DefaultTheme.MultiSideBarConfig}
+ * @type {import('vitepress').DefaultTheme.SideBar}
  */
 const sidebar = {
   '/guide': guideSidebar
@@ -49,8 +49,17 @@ export default defineConfig({
   srcDir: 'docs',
   lastUpdated: true,
   themeConfig: {
-    repo: 'alex8088/quick-start/tree/master/packages/create-docs',
-    logo: './logo.png',
+    socialLinks: [
+      {
+        icon: 'github',
+        link: 'alex8088/quick-start/tree/master/packages/create-docs'
+      }
+    ],
+    logo: '/favicon.svg',
+    footer: {
+      message: 'Released under the MIT License',
+      copyright: 'Copyright © 2022-present Alex Wei and Powered by VitePress'
+    },
     nav,
     sidebar
   }
