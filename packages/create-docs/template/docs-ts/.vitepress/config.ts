@@ -43,7 +43,7 @@ export default defineConfig({
     socialLinks: [
       {
         icon: 'github',
-        link: 'alex8088/quick-start/tree/master/packages/create-docs'
+        link: 'https://github.com/alex8088/quick-start/tree/master/packages/create-docs'
       }
     ],
     logo: '/favicon.svg',
