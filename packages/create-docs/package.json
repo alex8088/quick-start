@@ -1,6 +1,6 @@
 {
   "name": "@quick-start/create-docs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An easy way to generate a static site",
   "main": "index.js",
   "bin": {
