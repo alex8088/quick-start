@@ -36,8 +36,8 @@ yarn create @quick-start/electron my-app --template vue
 
 Currently supported template presets include:
 
-- `sample`
-- `sample-ts`
+- `vanilla`
+- `vanilla-ts`
 - `vue`
 - `vue-ts`
 - `react`

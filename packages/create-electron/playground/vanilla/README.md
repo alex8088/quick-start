@@ -1,4 +1,4 @@
-# sample
+# vanilla
 
 A minimal Electron application
 

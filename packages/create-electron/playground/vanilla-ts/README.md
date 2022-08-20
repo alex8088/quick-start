@@ -1,4 +1,4 @@
-# sample-ts
+# vanilla-ts
 
 A minimal Electron application with TypeScript
 

@@ -2,8 +2,8 @@
 import 'zx/globals'
 
 const templates = [
-  'sample',
-  'sample-ts',
+  'vanilla',
+  'vanilla-ts',
   'vue',
   'vue-ts',
   'react',

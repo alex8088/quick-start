@@ -21,7 +21,7 @@ const sortDependencies = require('./utils/sortDependencies')
 
 const FRAMEWORKS = [
   {
-    name: 'sample',
+    name: 'vanilla',
     color: yellow
   },
   {

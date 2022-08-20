@@ -1,5 +1,5 @@
 appId: com.electron.app
-productName: sample
+productName: vanilla
 directories:
   buildResources: build
 files:
@@ -9,7 +9,7 @@ asarUnpack:
   - '**/*.{node,dll}'
 afterSign: build/notarize.js
 win:
-  executableName: sample
+  executableName: vanilla
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}

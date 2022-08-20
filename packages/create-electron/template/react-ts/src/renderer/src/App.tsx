@@ -91,7 +91,7 @@ function App(): JSX.Element {
         </a>
         for more details on each supported template:
         <br />
-        <code>sample</code>, <code>sample-ts</code>, <code>vue</code>, <code>vue-ts</code>,
+        <code>vanilla</code>, <code>vanilla-ts</code>, <code>vue</code>, <code>vue-ts</code>,
         <code>react</code>, <code>react-ts</code>, <code>svelte</code>, <code>svelte-ts</code>
       </p>
     </div>
