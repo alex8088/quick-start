@@ -9,7 +9,7 @@ import baseConfig from 'vitepress-theme-vue/config'
 
 const guideGroupItems = [
   { text: 'Introduction', link: '/guide/introduction' },
-  { text: 'Getting Started', link: '/guide/getting-started' },
+  { text: 'Getting Started', link: '/guide/' },
   { text: 'Theme', link: '/guide/theme' }
 ]
 
@@ -59,7 +59,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   srcDir: 'docs',
   lastUpdated: true,
   themeConfig: {
-    navLogo: './logo.png',
+    navLogo: '/favicon.svg',
     socialLinks: [
       {
         icon: 'github',

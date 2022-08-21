@@ -1,12 +1,12 @@
 ---
 page: true
-heroImage: /logo.png
+heroImage: /favicon.svg
 heroAlt: Logo image
 heroText: create-docs
 description: An easy way to generate a static site
 actionButtons:
   - text: Get Started
-    link: /guide/getting-started
+    link: /guide/
 features:
   - title: Fast
     details: Quickly scaffold project structure via command line.

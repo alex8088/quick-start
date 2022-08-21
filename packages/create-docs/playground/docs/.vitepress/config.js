@@ -1,14 +1,14 @@
 import { defineConfig } from 'vitepress'
 
 /**
- * @type {import('vitepress').DefaultTheme.SideBarGroup[]}
+ * @type {import('vitepress').DefaultTheme.SidebarGroup[]}
  */
 const guideSidebar = [
   {
     text: 'Guide',
     items: [
       { text: 'Introduction', link: '/guide/introduction' },
-      { text: 'Getting Started', link: '/guide/getting-started' },
+      { text: 'Getting Started', link: '/guide/' },
       { text: 'Theme', link: '/guide/theme' }
     ]
   },
@@ -22,7 +22,7 @@ const guideSidebar = [
 ]
 
 /**
- * @type {import('vitepress').DefaultTheme.SideBar}
+ * @type {import('vitepress').DefaultTheme.Sidebar}
  */
 const sidebar = {
   '/guide': guideSidebar
@@ -32,7 +32,7 @@ const sidebar = {
  * @type {import('vitepress').DefaultTheme.NavItem[]}
  */
 const nav = [
-  { text: 'Guide', link: '/guide/getting-started', activeMatch: '^/guide/' },
+  { text: 'Guide', link: '/guide/', activeMatch: '^/guide/' },
   {
     text: 'VitePress',
     link: 'https://vitepress.vuejs.org/'
@@ -52,7 +52,7 @@ export default defineConfig({
     socialLinks: [
       {
         icon: 'github',
-        link: 'alex8088/quick-start/tree/master/packages/create-docs'
+        link: 'https://github.com/alex8088/quick-start/tree/master/packages/create-docs'
       }
     ],
     logo: '/favicon.svg',
