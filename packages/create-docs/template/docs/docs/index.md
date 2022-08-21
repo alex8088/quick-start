@@ -10,7 +10,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /guide/getting-started
+      link: /guide/
     - theme: alt
       text: View on GitHub
       link: https://github.com/alex8088/quick-start/tree/master/packages/create-docs

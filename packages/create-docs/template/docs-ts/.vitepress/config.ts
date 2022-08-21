@@ -5,7 +5,7 @@ const guideSidebar: DefaultTheme.SidebarGroup[] = [
     text: 'Guide',
     items: [
       { text: 'Introduction', link: '/guide/introduction' },
-      { text: 'Getting Started', link: '/guide/getting-started' },
+      { text: 'Getting Started', link: '/guide/' },
       { text: 'Theme', link: '/guide/theme' }
     ]
   },
@@ -23,7 +23,7 @@ const sidebar: DefaultTheme.Sidebar = {
 }
 
 const nav: DefaultTheme.NavItem[] = [
-  { text: 'Guide', link: '/guide/getting-started', activeMatch: '^/guide/' },
+  { text: 'Guide', link: '/guide/', activeMatch: '^/guide/' },
   {
     text: 'VitePress',
     link: 'https://vitepress.vuejs.org/'
