@@ -1,3 +1,8 @@
+### v1.0.3 (_2022-08-25_)
+
+- refactor: logo and demo
+- feat: default theme for docs template
+
 ### v1.0.2 (_2022-08-12_)
 
 - fix: default template type error
