@@ -187,10 +187,19 @@ async function init() {
 
   writeJsonFile(packageFile, sortDependencies(pkg))
 
-  console.log(`\nDone. Now run:\n`)
-
   const userAgent = process.env.npm_config_user_agent ?? ''
   const pkgManager = /pnpm/.test(userAgent) ? 'pnpm' : /yarn/.test(userAgent) ? 'yarn' : 'npm'
+
+  let npmrc = ''
+  if (pkgManager === 'pnpm' && !skip) {
+    npmrc += 'shamefully-hoist=true\n'
+  }
+
+  if (npmrc) {
+    writeFile(path.resolve(root, '.npmrc'), npmrc)
+  }
+
+  console.log(`\nDone. Now run:\n`)
 
   if (root !== cwd) {
     console.log(`  cd ${path.relative(cwd, root)}`)
