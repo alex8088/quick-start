@@ -119,6 +119,14 @@ async function init() {
         initial: false,
         active: 'Yes',
         inactive: 'No'
+      },
+      {
+        name: 'needsMirror',
+        type: () => (skip ? null : 'toggle'),
+        message: 'Enable Electron download mirror proxy?',
+        initial: false,
+        active: 'Yes',
+        inactive: 'No'
       }
     ])
   } catch (cancelled) {
@@ -131,7 +139,8 @@ async function init() {
     packageName = targetDir,
     framework,
     needsTypeScript,
-    needsUpdater
+    needsUpdater,
+    needsMirror
   } = result
 
   const root = path.join(cwd, targetDir)
@@ -191,6 +200,10 @@ async function init() {
   const pkgManager = /pnpm/.test(userAgent) ? 'pnpm' : /yarn/.test(userAgent) ? 'yarn' : 'npm'
 
   let npmrc = ''
+  if (needsMirror) {
+    npmrc = 'ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/\n'
+  }
+
   if (pkgManager === 'pnpm' && !skip) {
     npmrc += 'shamefully-hoist=true\n'
   }
