@@ -1,3 +1,12 @@
+### v1.0.3 (_2022-08-25_)
+
+- chore: sample template renamed to `vanilla`
+- chore: update deps
+- fix: node and v8 version info is wrong
+- fix: the `homepage` and `maintainer` attributes are required to pack the `deb` of linux
+- feat: support `pnpm`
+- feat: support Electron download mirror proxy
+
 ### v1.0.2 (_2022-05-28_)
 
 - fix: run build error in js template
