@@ -6,13 +6,11 @@
       "type": "node",
       "request": "launch",
       "cwd": "${workspaceRoot}",
-      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron-vite",
       "windows": {
-        "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
+        "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron-vite.cmd"
       },
-      "runtimeArgs": ["."],
-      "outputCapture": "std",
-      "timeout": 60000
+      "runtimeArgs": ["--sourcemap"]
     }
   ]
 }
