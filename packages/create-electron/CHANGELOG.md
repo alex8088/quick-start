@@ -1,3 +1,9 @@
+### v1.0.4 (_2022-08-29_)
+
+- chore: update index html
+- chore: update deps
+- fix: vscode debugging settings
+
 ### v1.0.3 (_2022-08-25_)
 
 - chore: sample template renamed to `vanilla`
