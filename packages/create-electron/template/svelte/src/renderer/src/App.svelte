@@ -30,9 +30,9 @@
         <p>
           ● Use
           <a target="_blank" href="https://github.com/alex8088/electron-vite">electron-vite</a>
-          compiler, a fast javascript builder integrated with
-          <a target="_blank" href="https://vitejs.dev">Vite</a>, and you don't need to care about
-          configuration.
+          , a fast build tooling integrated with
+          <a target="_blank" href="https://vitejs.dev">Vite</a>, and you don't need to worry
+          about configuration.
         </p>
       </li>
       <li>
@@ -42,7 +42,7 @@
             >electron-toolkit</a
           >
           that make you easy to develop. For example: TSconfigs extends, expose common Electron APIs
-          to renderer process in preload scripts and effective utils for main process.
+          to renderers in preload scripts and effective utils for the main process.
         </p>
       </li>
       <li>

@@ -45,11 +45,11 @@ function App() {
               >
                 electron-vite
               </a>
-              compiler, a fast javascript builder integrated with
+              , a fast build tooling integrated with
               <a target="_blank" href="https://vitejs.dev" rel="noopener noreferrer">
                 Vite
               </a>
-              , and you don{"'"}t need to care about configuration.
+              , and you don{"'"}t need to worry about configuration.
             </p>
           </li>
           <li>
@@ -63,7 +63,7 @@ function App() {
                 electron-toolkit
               </a>
               that make you easy to develop. For example: TSconfigs extends, expose common Electron
-              APIs to renderer process in preload scripts and effective utils for main process.
+              APIs to renderers in preload scripts and effective utils for the main process.
             </p>
           </li>
           <li>
