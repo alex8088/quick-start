@@ -30,8 +30,8 @@ import Versions from './components/Versions.vue'
           ● Use
           <a target="_blank" href="https://github.com/alex8088/electron-vite">electron-vite</a>
           , a fast build tooling integrated with
-          <a target="_blank" href="https://vitejs.dev">Vite</a>, and you don't need to worry
-          about configuration.
+          <a target="_blank" href="https://vitejs.dev">Vite</a>, and you don't need to worry about
+          configuration.
         </p>
       </li>
       <li>
