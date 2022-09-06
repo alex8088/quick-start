@@ -1,0 +1,39 @@
+{
+  "name": "@quick-start/create-node-lib",
+  "version": "1.0.0",
+  "description": "An easy way to start a Node.js library",
+  "main": "index.js",
+  "bin": {
+    "create-node-lib": "index.js"
+  },
+  "files": [
+    "index.js",
+    "template",
+    "utils"
+  ],
+  "scripts": {
+    "snapshot": "zx ./scripts/snapshot.mjs"
+  },
+  "keywords": [
+    "node",
+    "lib",
+    "template",
+    "starter"
+  ],
+  "author": "Alex Wei<https://github.com/alex8088>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex8088/quick-start.git",
+    "directory": "packages/create-node-lib"
+  },
+  "bugs": {
+    "url": "https://github.com/alex8088/quick-start/issues"
+  },
+  "homepage": "https://github.com/alex8088/quick-start/tree/master/packages/create-node-lib#readme",
+  "dependencies": {
+    "kolorist": "^1.5.1",
+    "minimist": "^1.2.6",
+    "prompts": "^2.4.2"
+  }
+}
