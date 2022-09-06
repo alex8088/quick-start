@@ -9,7 +9,8 @@
     "preinstall": "npx only-allow pnpm",
     "format": "prettier --write .",
     "snapshot:electron": "pnpm run -C packages/create-electron snapshot",
-    "snapshot:docs": "pnpm run -C packages/create-docs snapshot"
+    "snapshot:docs": "pnpm run -C packages/create-docs snapshot",
+    "snapshot:node-lib": "pnpm run -C packages/create-node-lib snapshot"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged",
