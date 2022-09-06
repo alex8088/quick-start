@@ -8,8 +8,8 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "format": "prettier --write .",
-    "snapshot:electron": "cd packages/create-electron && npm run snapshot",
-    "snapshot:docs": "cd packages/create-docs && npm run snapshot"
+    "snapshot:electron": "pnpm run -C packages/create-electron snapshot",
+    "snapshot:docs": "pnpm run -C packages/create-docs snapshot"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged",
@@ -21,10 +21,10 @@
     ]
   },
   "devDependencies": {
-    "lint-staged": "^12.1.7",
+    "lint-staged": "^13.0.3",
     "picocolors": "^1.0.0",
-    "prettier": "^2.5.1",
-    "simple-git-hooks": "^2.7.0",
-    "zx": "^4.3.0"
+    "prettier": "^2.7.1",
+    "simple-git-hooks": "^2.8.0",
+    "zx": "^7.0.8"
   }
 }
