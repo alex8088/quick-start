@@ -21,6 +21,7 @@ body:
       options:
         - create-electron
         - create-docs
+        - create-node-lib
     validations:
       required: true
   - type: textarea
