@@ -1,3 +1,9 @@
+### v1.0.5 (_2022-09-11_)
+
+- chore: update deps
+- chore: disable sandbox for Electron 20
+- fix: wrong ignore files configuration for electron-builder
+
 ### v1.0.4 (_2022-08-29_)
 
 - chore: update index html
