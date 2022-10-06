@@ -55,7 +55,7 @@ Currently supported template presets include:
 ## Features
 
 - Use `ESLint + Prettier` to better lint and style your code, help you to write high-quality code.
-- Use [electron-vite](https://github.com/alex8088/electron-vite), a fast build tooling integrated with [Vite 3](https://vitejs.dev), and you don't need to worry about configuration.
-- Use [electron-toolkit](https://github.com/alex8088/electron-toolkit) that make you easy to develop. For example: TSconfigs extends, expose common Electron APIs to renderers in preload scripts and effective utils for the main process.
-- Use [electron-builder](https://www.electron.build) and preset common configuration, allows you to easily pack Electron app.
+- Use [electron-vite](https://github.com/alex8088/electron-vite), a fast build tooling integrated with [Vite 3](https://vitejs.dev), support for HMR, hot reloading, debugging and source code protection.
+- Use [electron-toolkit](https://github.com/alex8088/electron-toolkit) to help you develop. For example: TSconfig extends, easily expose Electron APIs to renderers in preload scripts, etc.
+- Use [electron-builder](https://www.electron.build) and pre-configured to pack your app.
 - Use [electron-updater](https://www.electron.build) for auto-update, based on electron-builder.
