@@ -6,8 +6,8 @@ const { electronApp, optimizer } = require('@electron-toolkit/utils')
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 960,
-    height: 720,
+    width: 900,
+    height: 670,
     show: false,
     autoHideMenuBar: true,
     ...(process.platform === 'linux'

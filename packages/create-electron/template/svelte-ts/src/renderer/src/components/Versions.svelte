@@ -18,6 +18,7 @@
     font-family: 'Menlo', 'Lucida Console', monospace;
     color: #c2f5ff;
     line-height: 1;
+    transition: all 0.3s;
   }
 
   .versions li {
@@ -31,5 +32,11 @@
 
   .versions li:last-child {
     border: none;
+  }
+
+  @media (max-width: 840px) {
+    .versions {
+      display: none;
+    }
   }
 </style>
