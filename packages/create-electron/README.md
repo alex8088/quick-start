@@ -51,6 +51,7 @@ Currently supported template presets include:
 |     [vue](playground/vue)     |     [vue-ts](playground/vue-ts)     |
 |   [react](playground/react)   |   [react-ts](playground/react-ts)   |
 |  [svelte](playground/svelte)  |  [svelte-ts](playground/svelte-ts)  |
+|   [solid](playground/solid)   |  [solid-ts](playground/solid-ts)    |
 
 ## Features
 
