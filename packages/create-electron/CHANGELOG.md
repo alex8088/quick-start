@@ -1,3 +1,11 @@
+### v1.0.6 (_2022-10-07_)
+
+- feat: add `solid` and `solid-ts` templates
+- refactor: new hero
+- chore: update deps
+- fix: hero svg
+- fix: type check scripts
+
 ### v1.0.5 (_2022-09-11_)
 
 - chore: update deps
