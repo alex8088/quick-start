@@ -7,7 +7,9 @@ module.exports = (projectName, tempalte) => {
     react: 'An Electron application with React',
     'react-ts': 'An Electron application with React and TypeScript',
     svelte: 'An Electron application with Svelte',
-    'svelte-ts': 'An Electron application with Svelte and TypeScript'
+    'svelte-ts': 'An Electron application with Svelte and TypeScript',
+    solid: 'An Electron application with Solid',
+    'solid-ts': 'An Electron application with Solid and TypeScript'
   }
   const description = descriptions[tempalte]
   return `# ${projectName}

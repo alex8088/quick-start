@@ -4,7 +4,7 @@ const fs = require('fs')
 const path = require('path')
 const minimist = require('minimist')
 const prompts = require('prompts')
-const { yellow, green, blue, red, reset } = require('kolorist')
+const { yellow, green, blue, red, lightBlue, reset } = require('kolorist')
 const {
   copy,
   emptyDir,
@@ -30,11 +30,15 @@ const FRAMEWORKS = [
   },
   {
     name: 'react',
-    color: blue
+    color: lightBlue
   },
   {
     name: 'svelte',
     color: red
+  },
+  {
+    name: 'solid',
+    color: blue
   }
 ]
 

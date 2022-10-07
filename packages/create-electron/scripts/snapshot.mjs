@@ -9,7 +9,9 @@ const templates = [
   'react',
   'react-ts',
   'svelte',
-  'svelte-ts'
+  'svelte-ts',
+  'solid',
+  'solid-ts'
 ]
 
 const playgroundDir = path.resolve(__dirname, '../playground')
