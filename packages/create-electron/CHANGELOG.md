@@ -1,3 +1,8 @@
+### v1.0.7 (_2022-10-16_)
+
+- chore: update deps
+- chore: use externalize deps plugin
+
 ### v1.0.6 (_2022-10-07_)
 
 - feat: add `solid` and `solid-ts` templates
