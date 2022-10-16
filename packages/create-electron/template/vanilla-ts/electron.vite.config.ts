@@ -1,19 +1,11 @@
-import { defineConfig } from 'electron-vite'
+import { defineConfig, externalizeDepsPlugin } from 'electron-vite'
 
 export default defineConfig({
   main: {
-    build: {
-      rollupOptions: {
-        external: ['@electron-toolkit/utils']
-      }
-    }
+    plugins: [externalizeDepsPlugin()]
   },
   preload: {
-    build: {
-      rollupOptions: {
-        external: ['@electron-toolkit/preload']
-      }
-    }
+    plugins: [externalizeDepsPlugin()]
   },
   renderer: {}
 })
