@@ -1,0 +1,40 @@
+{
+  "name": "@quick-start/create-monorepo",
+  "version": "1.0.0",
+  "description": "An easy way to start a monorepo project",
+  "main": "index.js",
+  "bin": {
+    "create-monorepo": "index.js"
+  },
+  "files": [
+    "index.js",
+    "template",
+    "utils"
+  ],
+  "scripts": {
+    "snapshot": "zx ./scripts/snapshot.mjs"
+  },
+  "keywords": [
+    "node",
+    "monorepo",
+    "pnpm",
+    "template",
+    "starter"
+  ],
+  "author": "Alex Wei<https://github.com/alex8088>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex8088/quick-start.git",
+    "directory": "packages/create-monorepo"
+  },
+  "bugs": {
+    "url": "https://github.com/alex8088/quick-start/issues"
+  },
+  "homepage": "https://github.com/alex8088/quick-start/tree/master/packages/create-monorepo#readme",
+  "dependencies": {
+    "kolorist": "^1.5.1",
+    "minimist": "^1.2.6",
+    "prompts": "^2.4.2"
+  }
+}

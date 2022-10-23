@@ -38,6 +38,16 @@ importers:
       minimist: 1.2.6
       prompts: 2.4.2
 
+  packages/create-monorepo:
+    specifiers:
+      kolorist: ^1.5.1
+      minimist: ^1.2.6
+      prompts: ^2.4.2
+    dependencies:
+      kolorist: 1.5.1
+      minimist: 1.2.6
+      prompts: 2.4.2
+
   packages/create-node-lib:
     specifiers:
       kolorist: ^1.5.1

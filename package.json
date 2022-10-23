@@ -10,7 +10,8 @@
     "format": "prettier --write .",
     "snapshot:electron": "pnpm run -C packages/create-electron snapshot",
     "snapshot:docs": "pnpm run -C packages/create-docs snapshot",
-    "snapshot:node-lib": "pnpm run -C packages/create-node-lib snapshot"
+    "snapshot:node-lib": "pnpm run -C packages/create-node-lib snapshot",
+    "snapshot:monorepo": "pnpm run -C packages/create-monorepo snapshot"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged",
