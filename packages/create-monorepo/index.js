@@ -132,12 +132,12 @@ async function init() {
 
   writeFile(path.resolve(root, '.npmrc'), 'shamefully-hoist=true\n')
 
-  console.log(`\nDone. Remind that the package manager must be pnpm. Now run:\n`)
+  console.log(`\nDone. Now run:\n`)
 
   if (root !== cwd) {
     console.log(`  cd ${path.relative(cwd, root)}`)
   }
-  console.log(`  pnpm i`)
+  console.log(`  pnpm i\n`)
 }
 
 function canSafelyOverwrite(dir) {
