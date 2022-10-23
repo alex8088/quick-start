@@ -130,6 +130,8 @@ async function init() {
   fooPkg.name = `@${packageName}/foo`
   writeJsonFile(fooPackageFile, fooPkg)
 
+  writeFile(path.resolve(root, '.npmrc'), 'shamefully-hoist=true\n')
+
   console.log(`\nDone. Remind that the package manager must be pnpm. Now run:\n`)
 
   if (root !== cwd) {
