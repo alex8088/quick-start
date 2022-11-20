@@ -1,3 +1,8 @@
+### v1.0.8 (_2022-11-20_)
+
+- chore: update deps
+- chore: update svelte templates
+
 ### v1.0.7 (_2022-10-16_)
 
 - chore: update deps
