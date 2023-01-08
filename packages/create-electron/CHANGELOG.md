@@ -1,3 +1,9 @@
+### v1.0.9 (_2023-01-09_)
+
+- fix: svelte vite plugin
+- perf: static asset handling in main process
+- chore: update deps
+
 ### v1.0.8 (_2022-11-20_)
 
 - chore: update deps
