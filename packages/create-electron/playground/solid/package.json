@@ -17,21 +17,21 @@
     "build:linux": "npm run build && electron-builder --linux --config"
   },
   "dependencies": {
-    "@electron-toolkit/preload": "^1.0.2",
+    "@electron-toolkit/preload": "^1.0.3",
     "@electron-toolkit/utils": "^1.0.2"
   },
   "devDependencies": {
     "@electron/notarize": "^1.2.3",
     "electron": "^21.3.0",
     "electron-builder": "^23.6.0",
-    "electron-vite": "^1.0.14",
-    "eslint": "^8.28.0",
-    "eslint-config-prettier": "^8.5.0",
+    "electron-vite": "^1.0.17",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-solid": "^0.8.0",
-    "prettier": "^2.7.1",
-    "solid-js": "^1.6.2",
-    "vite": "^3.2.4",
-    "vite-plugin-solid": "^2.4.0"
+    "eslint-plugin-solid": "^0.9.1",
+    "prettier": "^2.8.2",
+    "solid-js": "^1.6.8",
+    "vite": "^4.0.4",
+    "vite-plugin-solid": "^2.5.0"
   }
 }
