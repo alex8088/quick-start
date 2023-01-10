@@ -1,3 +1,7 @@
+### v1.0.10 (_2023-01-10_)
+
+- chore: do not use namespace-style import syntax
+
 ### v1.0.9 (_2023-01-09_)
 
 - fix: svelte vite plugin
