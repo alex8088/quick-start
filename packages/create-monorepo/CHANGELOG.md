@@ -1,3 +1,7 @@
+### v1.0.2 (_2023-01-19_)
+
+- chore: update deps
+
 ### v1.0.1 (_2022-10-23_)
 
 - fix: npmrc lost
