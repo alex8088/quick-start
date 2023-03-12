@@ -1,6 +1,6 @@
 # vue-ts
 
-An Electron application with Vue and TypesSript
+An Electron application with Vue and TypeScript
 
 ## Recommended IDE Setup
 

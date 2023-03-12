@@ -22,16 +22,16 @@
   },
   "devDependencies": {
     "@electron/notarize": "^1.2.3",
-    "@sveltejs/vite-plugin-svelte": "^2.0.2",
-    "electron": "^21.3.3",
+    "@sveltejs/vite-plugin-svelte": "^2.0.3",
+    "electron": "^22.3.2",
     "electron-builder": "^23.6.0",
-    "electron-vite": "^1.0.17",
-    "eslint": "^8.31.0",
-    "eslint-config-prettier": "^8.6.0",
+    "electron-vite": "^1.0.20",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-svelte3": "^4.0.0",
-    "prettier": "^2.8.2",
-    "svelte": "^3.55.0",
-    "vite": "^4.0.4"
+    "prettier": "^2.8.4",
+    "svelte": "^3.56.0",
+    "vite": "^4.1.4"
   }
 }
