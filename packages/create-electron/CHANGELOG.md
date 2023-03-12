@@ -1,3 +1,10 @@
+### v1.0.11 (_2023-03-12_)
+
+- chore: typos
+- chore: add some ignore files for electron-builder
+- chore: support for renderer debugging
+- chore: update deps
+
 ### v1.0.10 (_2023-01-10_)
 
 - chore: do not use namespace-style import syntax
