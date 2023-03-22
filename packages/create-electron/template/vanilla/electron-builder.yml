@@ -6,7 +6,7 @@ files:
   - '!**/.vscode/*'
   - '!{.eslintignore,.eslintrc.js,.prettierignore,.prettierrc.yaml,dev-app-update.yml,CHANGELOG.md,README.md}'
 asarUnpack:
-  - 'resources/*'
+  - 'resources/**'
 afterSign: build/notarize.js
 win:
   executableName: app
