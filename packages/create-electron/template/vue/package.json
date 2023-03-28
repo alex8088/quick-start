@@ -23,16 +23,16 @@
   "devDependencies": {
     "@electron/notarize": "^1.2.3",
     "@rushstack/eslint-patch": "^1.2.0",
-    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitejs/plugin-vue": "^4.1.0",
     "@vue/eslint-config-prettier": "^7.1.0",
-    "electron": "^22.3.2",
+    "electron": "^22.3.4",
     "electron-builder": "^23.6.0",
-    "electron-vite": "^1.0.20",
+    "electron-vite": "^1.0.21",
     "eslint": "^8.36.0",
-    "eslint-plugin-vue": "^9.9.0",
+    "eslint-plugin-vue": "^9.10.0",
     "less": "^4.1.3",
-    "prettier": "^2.8.4",
-    "vite": "^4.1.4",
+    "prettier": "^2.8.7",
+    "vite": "^4.2.1",
     "vue": "^3.2.47"
   }
 }
