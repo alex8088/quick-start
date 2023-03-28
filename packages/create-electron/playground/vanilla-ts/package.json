@@ -26,17 +26,17 @@
   "devDependencies": {
     "@electron-toolkit/tsconfig": "^1.0.1",
     "@electron/notarize": "^1.2.3",
-    "@types/node": "16.18.14",
-    "@typescript-eslint/eslint-plugin": "^5.54.1",
-    "@typescript-eslint/parser": "^5.54.1",
+    "@types/node": "16.18.21",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
     "electron": "^22.3.2",
     "electron-builder": "^23.6.0",
-    "electron-vite": "^1.0.20",
+    "electron-vite": "^1.0.21",
     "eslint": "^8.36.0",
-    "eslint-config-prettier": "^8.7.0",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.4",
+    "prettier": "^2.8.7",
     "typescript": "^4.9.5",
-    "vite": "^4.1.4"
+    "vite": "^4.2.1"
   }
 }
