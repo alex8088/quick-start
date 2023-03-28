@@ -1,3 +1,9 @@
+### v1.0.12 (_2023-03-28_)
+
+- fix: don't pack all files in resources dir (including folders) into asar archive [@Littlegirlll](https://github.com/Littlegirlll)
+- perf: set timeout for vscode renderer debugging
+- chore: update deps
+
 ### v1.0.11 (_2023-03-12_)
 
 - chore: typos
