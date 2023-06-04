@@ -1,3 +1,12 @@
+### v1.0.13 (_2023-06-05_)
+
+- refactor: generate readme
+- fix: dead links
+- fix: svelte tsconfig in TypeScript 5
+- chore: update deps
+- chore: best package manager command
+- chore: update all non-major dependencies
+
 ### v1.0.12 (_2023-03-28_)
 
 - fix: don't pack all files in resources dir (including folders) into asar archive [@Littlegirlll](https://github.com/Littlegirlll)
