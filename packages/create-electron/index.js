@@ -12,10 +12,9 @@ const {
   writeYamlFile,
   readJsonFile,
   writeJsonFile,
-  readFile,
   writeFile
 } = require('./utils/fsExtra')
-const mergeReadme = require('./utils/mergeReadme')
+const generateReadme = require('./utils/generateReadme')
 const useElectronUpdater = require('./utils/useElectronUpdater')
 const sortDependencies = require('./utils/sortDependencies')
 
@@ -177,11 +176,6 @@ async function init() {
 
   fs.renameSync(path.resolve(root, '_gitignore'), path.resolve(root, '.gitignore'))
 
-  const readmeFile = path.resolve(root, 'README.md')
-  let readme = readFile(readmeFile)
-  readme = mergeReadme(packageName, template) + readme
-  writeFile(readmeFile, readme)
-
   const builderConfigFile = path.resolve(root, 'electron-builder.yml')
   let config = readYamlFile(builderConfigFile)
   config.productName = packageName
@@ -215,6 +209,9 @@ async function init() {
   if (npmrc) {
     writeFile(path.resolve(root, '.npmrc'), npmrc)
   }
+
+  const readme = generateReadme(template, packageName, pkgManager)
+  writeFile(path.resolve(root, 'README.md'), readme)
 
   console.log(`\nDone. Now run:\n`)
 
