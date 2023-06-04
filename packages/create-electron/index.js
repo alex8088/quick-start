@@ -15,6 +15,7 @@ const {
   writeFile
 } = require('./utils/fsExtra')
 const generateReadme = require('./utils/generateReadme')
+const getCommand = require('./utils/getCommand')
 const useElectronUpdater = require('./utils/useElectronUpdater')
 const sortDependencies = require('./utils/sortDependencies')
 
@@ -216,18 +217,13 @@ async function init() {
   console.log(`\nDone. Now run:\n`)
 
   if (root !== cwd) {
-    console.log(`  cd ${path.relative(cwd, root)}`)
+    const dir = path.relative(cwd, root)
+    console.log(`  cd ${dir.includes(' ') ? `"${dir}"` : dir}`)
   }
-  switch (pkgManager) {
-    case 'yarn':
-      console.log('  yarn')
-      console.log('  yarn dev')
-      break
-    default:
-      console.log(`  ${pkgManager} install`)
-      console.log(`  ${pkgManager} run dev`)
-      break
-  }
+
+  console.log(`  ${getCommand(pkgManager, 'install')}`)
+  console.log(`  ${getCommand(pkgManager, 'dev')}`)
+  console.log()
 }
 
 function canSafelyOverwrite(dir) {
