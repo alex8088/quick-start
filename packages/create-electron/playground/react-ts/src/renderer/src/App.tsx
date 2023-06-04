@@ -64,7 +64,7 @@ function App(): JSX.Element {
               Edit <span>src/renderer</span> files to test HMR. See{' '}
               <a
                 target="_blank"
-                href="https://evite.netlify.app/guide/hmr-in-renderer.html"
+                href="https://evite.netlify.app/guide/hmr.html"
                 rel="noopener noreferrer"
               >
                 docs

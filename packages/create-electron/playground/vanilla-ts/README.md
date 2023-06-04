@@ -11,24 +11,24 @@ A minimal Electron application with TypeScript
 ### Install
 
 ```bash
-$ npm install
+$ pnpm install
 ```
 
 ### Development
 
 ```bash
-$ npm run dev
+$ pnpm dev
 ```
 
 ### Build
 
 ```bash
 # For windows
-$ npm run build:win
+$ pnpm build:win
 
 # For macOS
-$ npm run build:mac
+$ pnpm build:mac
 
 # For Linux
-$ npm run build:linux
+$ pnpm build:linux
 ```

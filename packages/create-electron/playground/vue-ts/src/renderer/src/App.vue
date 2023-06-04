@@ -45,7 +45,7 @@ import Versions from './components/Versions.vue'
         <h2 class="title">HMR</h2>
         <p class="detail">
           Edit <span>src/renderer</span> files to test HMR. See
-          <a target="_blank" href="https://evite.netlify.app/guide/hmr-in-renderer.html">docs</a>.
+          <a target="_blank" href="https://evite.netlify.app/guide/hmr.html">docs</a>.
         </p>
       </article>
     </div>

@@ -7,8 +7,7 @@
     "src/preload/*.d.ts"
   ],
   "compilerOptions": {
-    "importsNotUsedAsValues": "error",
-    "preserveValueImports": true,
+    "verbatimModuleSyntax": true,
     "useDefineForClassFields": true,
     "strict": false,
     "allowJs": true,
