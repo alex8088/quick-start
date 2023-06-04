@@ -15,16 +15,16 @@
     "build:linux": "electron-builder --linux --config"
   },
   "dependencies": {
-    "@electron-toolkit/preload": "^1.0.3",
+    "@electron-toolkit/preload": "^2.0.0",
     "@electron-toolkit/utils": "^1.0.2"
   },
   "devDependencies": {
     "@electron/notarize": "^1.2.3",
-    "electron": "^22.3.4",
+    "electron": "^24.4.1",
     "electron-builder": "^23.6.0",
-    "eslint": "^8.36.0",
+    "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.7"
+    "prettier": "^2.8.8"
   }
 }
