@@ -14,7 +14,7 @@ function App() {
 
       <div class="links">
         <div class="link-item">
-          <a target="_blank" href="https://evite.netlify.app" rel="noopener noreferrer">
+          <a target="_blank" href="https://electron-vite.org" rel="noopener noreferrer">
             Documentation
           </a>
         </div>
@@ -46,7 +46,7 @@ function App() {
             <h2 class="title">Configuring</h2>
             <p class="detail">
               Config with <span>electron.vite.config.ts</span> and refer to the{' '}
-              <a target="_blank" href="https://evite.netlify.app/config/" rel="noopener noreferrer">
+              <a target="_blank" href="https://electron-vite.org/config" rel="noopener noreferrer">
                 config guide
               </a>
               .
@@ -60,7 +60,7 @@ function App() {
               Edit <span>src/renderer</span> files to test HMR. See{' '}
               <a
                 target="_blank"
-                href="https://evite.netlify.app/guide/hmr.html"
+                href="https://electron-vite.org/guide/hmr.html"
                 rel="noopener noreferrer"
               >
                 docs
@@ -80,7 +80,7 @@ function App() {
               to enable. See{' '}
               <a
                 target="_blank"
-                href="https://evite.netlify.app/guide/hot-reloading.html"
+                href="https://electron-vite.org/guide/hot-reloading.html"
                 rel="noopener noreferrer"
               >
                 docs
@@ -96,7 +96,7 @@ function App() {
               Check out <span>.vscode/launch.json</span>. See{' '}
               <a
                 target="_blank"
-                href="https://evite.netlify.app/guide/debugging.html"
+                href="https://electron-vite.org/guide/debugging.html"
                 rel="noopener noreferrer"
               >
                 docs
@@ -112,7 +112,7 @@ function App() {
               Supported via built-in plugin <span>bytecodePlugin</span>. See{' '}
               <a
                 target="_blank"
-                href="https://evite.netlify.app/guide/source-code-protection.html"
+                href="https://electron-vite.org/guide/source-code-protection.html"
                 rel="noopener noreferrer"
               >
                 docs
