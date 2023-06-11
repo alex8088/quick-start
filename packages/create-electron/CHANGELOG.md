@@ -1,3 +1,7 @@
+### v1.0.14 (_2023-06-11_)
+
+- chore: electron-vite.org is online
+
 ### v1.0.13 (_2023-06-05_)
 
 - refactor: generate readme
