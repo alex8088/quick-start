@@ -1,3 +1,7 @@
+### v1.0.15 (_2023-07-11_)
+
+- chore: update all non-major dependencies
+
 ### v1.0.14 (_2023-06-11_)
 
 - chore: electron-vite.org is online
