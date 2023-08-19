@@ -13,6 +13,30 @@ const descriptions = {
   'solid-ts': 'An Electron application with Solid and TypeScript'
 }
 
+function getCodeExtensionLink(name, itemName) {
+  return `[${name}](https://marketplace.visualstudio.com/items?itemName=${itemName})`
+}
+
+function getRecommendedIDESetup(template) {
+  const vscodeLink = '[VSCode](https://code.visualstudio.com/)'
+  const eslintLink = getCodeExtensionLink('ESLint', 'dbaeumer.vscode-eslint')
+  const prettierLink = getCodeExtensionLink('Prettier', 'esbenp.prettier-vscode')
+  const links = [vscodeLink, eslintLink, prettierLink]
+  if (template === 'vue') {
+    links.push(getCodeExtensionLink('Volar', 'Vue.volar'))
+  }
+  if (template === 'vue-ts') {
+    links.push(getCodeExtensionLink('Volar', 'Vue.volar'))
+    links.push(
+      getCodeExtensionLink('TypeScript Vue Plugin (Volar)', 'Vue.vscode-typescript-vue-plugin')
+    )
+  }
+  if (template === 'svelte' || template === 'svelte-ts') {
+    links.push(getCodeExtensionLink('Svelte', 'svelte.svelte-vscode'))
+  }
+  return links.join(' + ')
+}
+
 module.exports = (projectTemplate, packageName, packageManager) => {
   const description = descriptions[projectTemplate]
 
@@ -22,7 +46,7 @@ ${description}
 
 ## Recommended IDE Setup
 
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- ${getRecommendedIDESetup(projectTemplate)}
 
 ## Project Setup
 
