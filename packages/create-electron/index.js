@@ -175,6 +175,21 @@ async function init() {
   // Render variant template
   render(template)
 
+  if (template === 'svelte' || template === 'svelte-ts') {
+    const prettierConfigFile = path.resolve(root, '.prettierrc.yaml')
+    let config = readYamlFile(prettierConfigFile)
+    config.plugins = ['prettier-plugin-svelte']
+    config.overrides = [{ files: '*.svelte', options: { parser: 'svelte' } }]
+    writeYamlFile(prettierConfigFile, config)
+
+    const vscodeSettingFile = path.resolve(root, '.vscode/settings.json')
+    let settings = readJsonFile(vscodeSettingFile)
+    settings['[svelte]'] = { 'editor.defaultFormatter': 'svelte.svelte-vscode' }
+    settings['svelte.enable-ts-plugin'] = true
+    settings['eslint.validate'] = ['javascript', 'javascriptreact', 'svelte']
+    writeJsonFile(vscodeSettingFile, settings)
+  }
+
   fs.renameSync(path.resolve(root, '_gitignore'), path.resolve(root, '.gitignore'))
 
   const builderConfigFile = path.resolve(root, 'electron-builder.yml')
