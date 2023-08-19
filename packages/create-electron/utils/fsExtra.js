@@ -51,7 +51,7 @@ exports.readJsonFile = (path) => {
 }
 
 exports.writeJsonFile = (path, contents) => {
-  fs.writeFileSync(path, JSON.stringify(contents, null, 2))
+  fs.writeFileSync(path, JSON.stringify(contents, null, 2) + '\n')
 }
 
 exports.readFile = (path) => {
