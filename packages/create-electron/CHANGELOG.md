@@ -1,3 +1,11 @@
+### v1.0.16 (_2023-08-20_)
+
+- chore: update dependencies
+- fix: eslint and prettier not work in svelte template
+- perf: write json file with newline character
+- perf: best recommended ide steup
+- perf: format
+
 ### v1.0.15 (_2023-07-11_)
 
 - chore: update all non-major dependencies
