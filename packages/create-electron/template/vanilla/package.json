@@ -4,7 +4,7 @@
   "description": "A minimal Electron application",
   "main": "./src/main.js",
   "author": "example.com",
-  "homepage": "https://www.electronjs.org",
+  "homepage": "https://electron-vite.org",
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint --ext .js .",
