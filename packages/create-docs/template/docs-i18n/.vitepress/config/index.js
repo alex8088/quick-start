@@ -1,6 +1,10 @@
-import { defineConfig, DefaultTheme } from 'vitepress'
+import { defineConfig } from 'vitepress'
+import zh from './zh'
 
-const sidebar: DefaultTheme.Sidebar = {
+/**
+ * @type {import('vitepress').DefaultTheme.Sidebar}
+ */
+const sidebar = {
   '/': [
     {
       text: 'Guide',
@@ -16,7 +20,10 @@ const sidebar: DefaultTheme.Sidebar = {
   ]
 }
 
-const nav: DefaultTheme.NavItem[] = [
+/**
+ * @type {import('vitepress').DefaultTheme.NavItem[]}
+ */
+const nav = [
   { text: 'Guide', link: '/guide/', activeMatch: '^/guide/' },
   {
     text: 'Links',
@@ -41,12 +48,31 @@ export default defineConfig({
   srcDir: 'docs',
   lastUpdated: true,
   cleanUrls: true,
-  // locales: {
-  //   root: { label: 'English' },
-  //   zh: { label: '简体中文', link: 'https://example.com/' }
-  // },
+  locales: {
+    root: { label: 'English' },
+    zh: { label: '简体中文', ...zh.localeConfig }
+  },
   themeConfig: {
     logo: '/logo.svg',
+    // search: {
+    //   provider: 'local',
+    //   options: {
+    //     locales: {
+    //       zh: zh.searchLocales.local
+    //     }
+    //   }
+    // },
+    // search: {
+    //   provider: 'algolia',
+    //   options: {
+    //     appId: '...',
+    //     apiKey: '...',
+    //     indexName: '...',
+    //     locales: {
+    //       zh: zh.searchLocales.algolia
+    //     }
+    //   }
+    // },
     socialLinks: [
       {
         icon: 'github',

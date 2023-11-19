@@ -4,28 +4,9 @@ const fs = require('fs')
 const path = require('path')
 const minimist = require('minimist')
 const prompts = require('prompts')
-const { red, green, gray, reset } = require('kolorist')
-const {
-  copy,
-  emptyDir,
-  readJsonFile,
-  writeJsonFile,
-  readFile,
-  writeFile
-} = require('./utils/fsExtra')
-
-const THEMES = [
-  {
-    name: 'vue',
-    value: '-vue',
-    color: green
-  },
-  {
-    name: 'default',
-    value: '',
-    color: gray
-  }
-]
+const { red, reset } = require('kolorist')
+const { copy, emptyDir, readJsonFile, writeJsonFile, writeFile } = require('./utils/fsExtra')
+const getCommand = require('./utils/getCommand')
 
 const DEFAULT_PRO_NAME = 'my-docs'
 
@@ -35,7 +16,8 @@ async function init() {
 
   let targetDir = argv._[0]
   let ts = argv.ts
-  let theme = argv.theme
+  let i18n = argv.i18n || false
+  let locale = argv.locale || ''
 
   let skip = argv.skip || false
 
@@ -76,28 +58,37 @@ async function init() {
         validate: (dir) => isValidPackageName(dir) || 'Invalid package.json name'
       },
       {
-        name: 'vitepressTheme',
-        type: skip || (theme && THEMES.some((t) => t.name === theme)) ? null : 'select',
-        message:
-          typeof theme === 'string' && !THEMES.includes(theme)
-            ? reset(`"${theme}" isn't a valid theme. Please choose from below: `)
-            : reset('Select a theme:'),
-        initial: 0,
-        choices: THEMES.map((theme) => {
-          const frameworkColor = theme.color
-          return {
-            title: frameworkColor(theme.name),
-            value: theme.value
-          }
-        })
-      },
-      {
         name: 'needsTypeScript',
         type: () => (skip || ts ? null : 'toggle'),
         message: 'Add TypeScript?',
         initial: false,
         active: 'Yes',
         inactive: 'No'
+      },
+      {
+        name: 'needsI18n',
+        type: () => (skip || i18n ? null : 'toggle'),
+        message: 'Need i18n?',
+        initial: false,
+        active: 'Yes',
+        inactive: 'No'
+      },
+      {
+        name: 'defaultLocale',
+        type: (needsI18n) =>
+          skip || needsI18n || (locale && ['zh'].includes(locale)) ? null : 'select',
+        message: 'Select a locale',
+        initial: 0,
+        choices: [
+          {
+            title: 'default',
+            value: ''
+          },
+          {
+            title: 'zh',
+            value: 'zh'
+          }
+        ]
       }
     ])
   } catch (cancelled) {
@@ -109,7 +100,8 @@ async function init() {
     shouldOverwrite = skip,
     packageName = targetDir,
     needsTypeScript = ts,
-    vitepressTheme
+    needsI18n = i18n,
+    defaultLocale = locale
   } = result
 
   const root = path.join(cwd, targetDir)
@@ -120,33 +112,33 @@ async function init() {
     fs.mkdirSync(root)
   }
 
-  if (skip) vitepressTheme = theme ? `-${theme}` : ''
-
-  const template = `docs${vitepressTheme}${needsTypeScript ? '-ts' : ''}`
+  const localePrefix = defaultLocale === 'zh' ? '-zh' : ''
+  const template = `docs${needsI18n ? '-i18n' : localePrefix}${needsTypeScript ? '-ts' : ''}`
 
   console.log(`\nScaffolding project in ${root}...`)
 
   const templateRoot = path.join(__dirname, 'template')
-  const render = function render(templateName) {
+  const render = function render(templateName, dir = '') {
     const templateDir = path.resolve(templateRoot, templateName)
-    copy(templateDir, root)
+    copy(templateDir, dir || root)
   }
 
   // Render base template
   render('base')
+  render(`base-${needsTypeScript ? 'ts' : 'js'}`)
+
+  // Render i18n template
+  if (needsI18n) {
+    render('i18n/en', path.join(root, 'docs'))
+    render('i18n/zh', path.join(root, 'docs/zh'))
+  } else {
+    render(`i18n/${defaultLocale ? defaultLocale : 'en'}`, path.join(root, 'docs'))
+  }
 
   // Render variant template
   render(template)
 
   fs.renameSync(path.resolve(root, '_gitignore'), path.resolve(root, '.gitignore'))
-
-  const readmeFile = path.resolve(root, 'README.md')
-  let readme = readFile(readmeFile)
-  readme = `# ${packageName}
-
-  ${readme}
-  `
-  writeFile(readmeFile, readme)
 
   const packageFile = path.join(root, `package.json`)
   const pkg = readJsonFile(packageFile)
@@ -154,24 +146,43 @@ async function init() {
 
   writeJsonFile(packageFile, pkg)
 
-  console.log(`\nDone. Now run:\n`)
-
   const userAgent = process.env.npm_config_user_agent ?? ''
   const pkgManager = /pnpm/.test(userAgent) ? 'pnpm' : /yarn/.test(userAgent) ? 'yarn' : 'npm'
 
+  const readme = `# ${packageName}
+
+This site is built with [VitePress](https://vitepress.dev).
+
+## Install
+
+\`\`\`bash
+$ ${getCommand(pkgManager, 'install')}
+\`\`\`
+
+## Development
+
+\`\`\`bash
+$ ${getCommand(pkgManager, 'dev')}
+\`\`\`
+
+## Build
+
+\`\`\`bash
+$ ${getCommand(pkgManager, 'build')}
+\`\`\`
+`
+  writeFile(path.resolve(root, 'README.md'), readme)
+
+  console.log(`\nDone. Now run:\n`)
+
   if (root !== cwd) {
-    console.log(`  cd ${path.relative(cwd, root)}`)
+    const dir = path.relative(cwd, root)
+    console.log(`  cd ${dir.includes(' ') ? `"${dir}"` : dir}`)
   }
-  switch (pkgManager) {
-    case 'yarn':
-      console.log('  yarn')
-      console.log('  yarn dev')
-      break
-    default:
-      console.log(`  ${pkgManager} install`)
-      console.log(`  ${pkgManager} run dev`)
-      break
-  }
+
+  console.log(`  ${getCommand(pkgManager, 'install')}`)
+  console.log(`  ${getCommand(pkgManager, 'dev')}`)
+  console.log()
 }
 
 function canSafelyOverwrite(dir) {

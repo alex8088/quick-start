@@ -1,4 +1,5 @@
 import { defineConfig, DefaultTheme } from 'vitepress'
+import zh from './zh'
 
 const sidebar: DefaultTheme.Sidebar = {
   '/': [
@@ -41,12 +42,31 @@ export default defineConfig({
   srcDir: 'docs',
   lastUpdated: true,
   cleanUrls: true,
-  // locales: {
-  //   root: { label: 'English' },
-  //   zh: { label: '简体中文', link: 'https://example.com/' }
-  // },
+  locales: {
+    root: { label: 'English' },
+    zh: { label: '简体中文', ...zh.localeConfig }
+  },
   themeConfig: {
     logo: '/logo.svg',
+    // search: {
+    //   provider: 'local',
+    //   options: {
+    //     locales: {
+    //       zh: zh.searchLocales.local
+    //     }
+    //   }
+    // },
+    // search: {
+    //   provider: 'algolia',
+    //   options: {
+    //     appId: '...',
+    //     apiKey: '...',
+    //     indexName: '...',
+    //     locales: {
+    //       zh: zh.searchLocales.algolia
+    //     }
+    //   }
+    // },
     socialLinks: [
       {
         icon: 'github',

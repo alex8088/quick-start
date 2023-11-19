@@ -24,13 +24,8 @@ $ pnpm create @quick-start/docs
 
 Then follow the prompts!
 
-## Recommended Theme
-
-[VitePress-Theme-Vue](https://alex8088.github.io/vitepress-theme-vue/) base on @vue/theme, more practical and comprehensive.
-
 ## Powered By
 
 - [VitePress](https://vitepress.vuejs.org/)
-- [VitePress-Theme-Vue](https://alex8088.github.io/vitepress-theme-vue/)
 - [Vite](https://vitejs.dev/)
 - [Vue](https://vuejs.org/)

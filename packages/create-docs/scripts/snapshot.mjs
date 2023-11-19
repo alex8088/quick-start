@@ -10,5 +10,7 @@ cd(playgroundDir)
 
 await $`node ${bin} docs --skip`
 await $`node ${bin} docs-ts --ts --skip`
-await $`node ${bin} docs-vue --theme vue --skip`
-await $`node ${bin} docs-vue-ts --theme vue --ts --skip`
+await $`node ${bin} docs-i18n --i18n --skip`
+await $`node ${bin} docs-i18n-ts --ts --i18n --skip`
+await $`node ${bin} docs-zh --locale zh --skip`
+await $`node ${bin} docs-zh-ts --ts --locale zh --skip`
