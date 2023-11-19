@@ -1,3 +1,8 @@
+### v1.0.4 (_2023-11-19_)
+
+- refactor: theme, locales, internationalization and more templates
+- chore: bump deps
+
 ### v1.0.3 (_2022-08-25_)
 
 - refactor: logo and demo
