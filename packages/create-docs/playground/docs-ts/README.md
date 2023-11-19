@@ -1,23 +1,21 @@
 # docs-ts
 
-  This site is built with [VitePress](https://vitepress.vuejs.org/).
+This site is built with [VitePress](https://vitepress.dev).
 
 ## Install
 
 ```bash
-$ npm install
+$ pnpm install
 ```
 
 ## Development
 
 ```bash
-$ npm run dev
+$ pnpm dev
 ```
 
 ## Build
 
 ```bash
-$ npm run build
+$ pnpm build
 ```
-
-  

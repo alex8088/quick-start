@@ -1,27 +1,29 @@
 ---
 layout: home
+title: create-docs
+titleTemplate: An easy way to generate a static site
 hero:
   name: create-docs
   text: An easy way to generate a static site
-  tagline: An easy way to generate a static site
+  tagline: My great project tagline
   image:
-    src: /favicon.svg
-    alt: Logo image
+    src: /logo-large.webp
+    alt: logo
   actions:
     - theme: brand
       text: Get Started
-      link: /guide/
+      link: ./guide/
     - theme: alt
-      text: View on GitHub
-      link: https://github.com/alex8088/quick-start/tree/master/packages/create-docs
+      text: VitePress Guide
+      link: https://vitepress.dev
 features:
-  - icon: ⚡
-    title: Fast
-    details: Quickly scaffold project structure via command line.
-  - icon: 🛠
-    title: Perfect
-    details: Preset configuration, just need to focus on writing.
+  - icon: 🔥
+    title: Feature A
+    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - icon: 💡
+    title: Feature B
+    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
   - icon: 🚀
-    title: Easy-to-use
-    details: Base on VitePress, easy to use.
+    title: Feature C
+    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---

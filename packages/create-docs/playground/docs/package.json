@@ -2,27 +2,20 @@
   "name": "docs",
   "private": true,
   "version": "1.0.0",
-  "engines": {
-    "node": ">=14.0.0"
-  },
+  "type": "module",
   "scripts": {
     "dev": "vitepress",
     "build": "vitepress build",
     "serve": "vitepress serve"
   },
-  "dependencies": {
-    "vue": "^3.2.33"
-  },
   "devDependencies": {
-    "vitepress": "1.0.0-alpha.4"
+    "vitepress": "1.0.0-rc.29"
   },
   "pnpm": {
     "peerDependencyRules": {
       "ignoreMissing": [
         "@algolia/client-search",
-        "react",
-        "react-dom",
-        "@types/react"
+        "search-insights"
       ]
     }
   }
