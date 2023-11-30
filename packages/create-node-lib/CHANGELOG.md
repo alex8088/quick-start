@@ -1,3 +1,8 @@
+### v1.0.3 (_2023-11-30_)
+
+- refactor: more bundler, ts execution and bump deps
+- chore: bump deps
+
 ### v1.0.2 (_2023-03-12_)
 
 - chore: update deps
