@@ -1,5 +1,5 @@
 {
-  "name": "@monorepo/foo",
+  "name": "@monorepo-tsx/foo",
   "version": "1.0.0",
   "description": "A minimal typescript library.",
   "main": "dist/index.cjs",
@@ -16,6 +16,7 @@
     "dist"
   ],
   "scripts": {
+    "dev": "esno -r dotenv/config src/index.ts",
     "build": "unbuild"
   }
 }

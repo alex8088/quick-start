@@ -1,15 +1,14 @@
-const { defineConfig } = require('eslint-define-config')
-
-module.exports = defineConfig({
+module.exports = {
   root: true,
   env: {
+    commonjs: true,
     es6: true,
     node: true
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 2021
+    ecmaVersion: 2022
   },
   plugins: ['@typescript-eslint'],
   extends: [
@@ -19,6 +18,7 @@ module.exports = defineConfig({
     'plugin:prettier/recommended'
   ],
   rules: {
+    'prettier/prettier': 'warn',
     '@typescript-eslint/ban-ts-comment': [
       'error',
       { 'ts-ignore': 'allow-with-description' }
@@ -35,10 +35,10 @@ module.exports = defineConfig({
   },
   overrides: [
     {
-      files: ['*.js'],
+      files: ['*.js', '*.mjs'],
       rules: {
         '@typescript-eslint/explicit-function-return-type': 'off'
       }
     }
   ]
-})
+}

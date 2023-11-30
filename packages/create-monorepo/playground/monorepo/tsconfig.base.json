@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es2019",
+    "target": "esnext",
     "module": "esnext",
-    "lib": ["es2019", "esnext", "dom"],
+    "lib": ["es2022", "esnext", "dom"],
     "sourceMap": false,
     "strict": true,
     "esModuleInterop": true,
-    "moduleResolution": "node",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,

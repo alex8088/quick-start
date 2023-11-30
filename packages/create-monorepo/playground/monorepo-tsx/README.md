@@ -1,4 +1,4 @@
-# monorepo-test
+# monorepo-tsx
 
 A monorepo starter
 
@@ -6,4 +6,4 @@ A monorepo starter
 
 | Package       | Description       | Version        |
 | ------------- | :---------------- |  :------------ |
-| [@monorepo-test/foo](packages/foo) | A minimal typescript library | |
+| [@monorepo-tsx/foo](packages/foo) | A minimal typescript library | |

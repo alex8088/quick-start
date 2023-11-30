@@ -1,6 +1,12 @@
-# @monorepo/foo
+# @monorepo-tsx/foo
 
 A minimal typescript library.
+
+## Development
+
+```sh
+$ pnpm dev:foo
+```
 
 ## Build
 
