@@ -1,1 +1,0 @@
-A minimal typescript library.

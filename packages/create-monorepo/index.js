@@ -22,6 +22,7 @@ async function init() {
 
   let targetDir = argv._[0]
   let test = argv.test
+  let runTS = argv.runTS || false
 
   let skip = argv.skip || false
 
@@ -68,6 +69,14 @@ async function init() {
         initial: false,
         active: 'Yes',
         inactive: 'No'
+      },
+      {
+        name: 'needsTSExecution',
+        type: () => (skip || runTS ? null : 'toggle'),
+        message: 'Add TypeScript execution(tsx/esno)?',
+        initial: false,
+        active: 'Yes',
+        inactive: 'No'
       }
     ])
   } catch (cancelled) {
@@ -75,7 +84,12 @@ async function init() {
     return
   }
 
-  let { shouldOverwrite = skip, packageName = targetDir, needsTest = test } = result
+  let {
+    shouldOverwrite = skip,
+    packageName = targetDir,
+    needsTest = test,
+    needsTSExecution = runTS
+  } = result
 
   const root = path.join(cwd, targetDir)
 
@@ -97,47 +111,107 @@ async function init() {
 
   if (needsTest) {
     render('test')
-  } else {
-    render('default')
+  }
+
+  if (needsTSExecution) {
+    render('env')
   }
 
   fs.renameSync(path.resolve(root, '_gitignore'), path.resolve(root, '.gitignore'))
 
-  const readmeFile = path.resolve(root, 'README.md')
-  let readme = readFile(readmeFile)
-  readme = `# ${packageName}
+  const readme = `# ${packageName}
 
-  ${readme}| [@${packageName}/foo](packages/foo) | A minimal typescript library | |
+A monorepo starter
 
-  `
-  writeFile(readmeFile, readme)
+## Packages
+
+| Package       | Description       | Version        |
+| ------------- | :---------------- |  :------------ |
+| [@${packageName}/foo](packages/foo) | A minimal typescript library | |
+`
+  writeFile(path.resolve(root, 'README.md'), readme)
 
   const packageFile = path.join(root, `package.json`)
   const pkg = readJsonFile(packageFile)
   pkg.name = packageName
+
+  if (!needsTest) {
+    delete pkg.scripts['test:foo']
+    delete pkg.devDependencies['vitest']
+  }
+
+  if (!needsTSExecution) {
+    delete pkg.scripts['dev:foo']
+    delete pkg.devDependencies['dotenv']
+    delete pkg.devDependencies['esno']
+  }
+
   writeJsonFile(packageFile, pkg)
 
-  const fooReadmeFile = path.resolve(root, 'packages', 'foo', 'README.md')
-  let fooReadme = readFile(fooReadmeFile)
-  fooReadme = `# @${packageName}/foo
+  const fooReadme = `# @${packageName}/foo
 
-  ${fooReadme}`
+A minimal typescript library.
+${
+  needsTSExecution
+    ? `
+## Development
 
-  writeFile(fooReadmeFile, fooReadme)
+\`\`\`sh
+$ pnpm dev:foo
+\`\`\`
+`
+    : ''
+}
+## Build
+
+\`\`\`sh
+$ pnpm build:foo
+\`\`\`
+${
+  needsTest
+    ? `
+## Test
+
+\`\`\`sh
+$ pnpm test:foo
+\`\`\`
+`
+    : ''
+}`
+
+  writeFile(path.resolve(root, 'packages', 'foo', 'README.md'), fooReadme)
 
   const fooPackageFile = path.join(root, 'packages', 'foo', `package.json`)
   const fooPkg = readJsonFile(fooPackageFile)
   fooPkg.name = `@${packageName}/foo`
+
+  if (!needsTest) {
+    delete fooPkg.scripts['test']
+  }
+
+  if (!needsTSExecution) {
+    delete fooPkg.scripts['dev']
+  }
+
   writeJsonFile(fooPackageFile, fooPkg)
+
+  if (needsTSExecution) {
+    const tsConfigFile = path.join(root, 'packages', 'foo', `tsconfig.json`)
+    const tsc = readJsonFile(tsConfigFile)
+    tsc.include = [...tsc.include, 'env.d.ts']
+    writeJsonFile(tsConfigFile, tsc)
+  }
 
   writeFile(path.resolve(root, '.npmrc'), 'shamefully-hoist=true\n')
 
   console.log(`\nDone. Now run:\n`)
 
   if (root !== cwd) {
-    console.log(`  cd ${path.relative(cwd, root)}`)
+    const dir = path.relative(cwd, root)
+    console.log(`  cd ${dir.includes(' ') ? `"${dir}"` : dir}`)
   }
   console.log(`  pnpm i\n`)
+  console.log()
 }
 
 function canSafelyOverwrite(dir) {

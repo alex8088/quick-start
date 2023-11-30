@@ -1,0 +1,30 @@
+{
+  "name": "@my-monorepo/monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A monorepo starter",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "format": "prettier --write .",
+    "lint": "eslint --ext .ts packages/*/src/**",
+    "typecheck": "tsc --noEmit",
+    "dev:foo": "pnpm run -C packages/foo dev",
+    "build:foo": "pnpm run -C packages/foo build",
+    "test:foo": "pnpm run -C packages/foo test"
+  },
+  "devDependencies": {
+    "@types/node": "^18.18.14",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "esno": "^4.0.0",
+    "prettier": "^3.1.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.2",
+    "vitest": "^0.34.6",
+    "unbuild": "^2.0.0"
+  }
+}

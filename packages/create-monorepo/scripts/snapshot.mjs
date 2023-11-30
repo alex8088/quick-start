@@ -10,3 +10,4 @@ cd(playgroundDir)
 
 await $`node ${bin} monorepo --skip`
 await $`node ${bin} monorepo-test --test --skip`
+await $`node ${bin} monorepo-tsx --runTS --skip`
