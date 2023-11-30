@@ -1,3 +1,8 @@
+### v1.0.4 (_2023-11-30_)
+
+- refactor(create-monorepo): unbuild bundler, ts execution and bump deps
+- chore(create-monorepo): bump deps
+
 ### v1.0.3 (_2023-03-12_)
 
 - chore: update deps
