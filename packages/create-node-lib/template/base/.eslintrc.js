@@ -8,7 +8,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 2021
+    ecmaVersion: 2022
   },
   plugins: ['@typescript-eslint'],
   extends: [
@@ -18,6 +18,7 @@ module.exports = {
     'plugin:prettier/recommended'
   ],
   rules: {
+    'prettier/prettier': 'warn',
     '@typescript-eslint/ban-ts-comment': [
       'error',
       { 'ts-ignore': 'allow-with-description' }

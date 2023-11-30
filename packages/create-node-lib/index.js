@@ -5,23 +5,21 @@ const path = require('path')
 const minimist = require('minimist')
 const prompts = require('prompts')
 const { red, reset } = require('kolorist')
-const {
-  copy,
-  emptyDir,
-  readJsonFile,
-  writeJsonFile,
-  readFile,
-  writeFile
-} = require('./utils/fsExtra')
+const { copy, emptyDir, readJsonFile, writeJsonFile, writeFile } = require('./utils/fsExtra')
+const getCommand = require('./utils/getCommand')
 
 const DEFAULT_PRO_NAME = 'my-node-lib'
+const BUNDLERS = ['unbuild', 'tsup', 'rollup']
 
 async function init() {
   const argv = minimist(process.argv.slice(2), { string: [0] })
   const cwd = process.cwd()
 
   let targetDir = argv._[0]
-  let test = argv.test
+  let bundler = argv.bundler || ''
+  let useConfigFile = argv.useConfigFile || false
+  let test = argv.test || false
+  let runTS = argv.runTS || false
 
   let skip = argv.skip || false
 
@@ -62,9 +60,33 @@ async function init() {
         validate: (dir) => isValidPackageName(dir) || 'Invalid package.json name'
       },
       {
+        name: 'defaultBundler',
+        type: () => (skip || (bundler && BUNDLERS.includes(bundler)) ? null : 'select'),
+        message: 'Select a bundler',
+        initial: 0,
+        choices: BUNDLERS.map((bundler) => ({ title: bundler, value: bundler }))
+      },
+      {
+        name: 'needsConfigFile',
+        type: (defaultBundler) =>
+          skip || useConfigFile || defaultBundler === 'rollup' ? null : 'toggle',
+        message: 'Add config file?',
+        initial: false,
+        active: 'Yes',
+        inactive: 'No'
+      },
+      {
         name: 'needsTest',
         type: () => (skip || test ? null : 'toggle'),
-        message: 'Add Test?',
+        message: 'Add test?',
+        initial: false,
+        active: 'Yes',
+        inactive: 'No'
+      },
+      {
+        name: 'needsTSExecution',
+        type: () => (skip || runTS ? null : 'toggle'),
+        message: 'Add TypeScript Execution(tsx/esno)?',
         initial: false,
         active: 'Yes',
         inactive: 'No'
@@ -75,7 +97,14 @@ async function init() {
     return
   }
 
-  let { shouldOverwrite = skip, packageName = targetDir, needsTest = test } = result
+  let {
+    shouldOverwrite = skip,
+    packageName = targetDir,
+    defaultBundler = bundler,
+    needsConfigFile = useConfigFile || defaultBundler === 'rollup',
+    needsTest = test,
+    needsTSExecution = runTS
+  } = result
 
   const root = path.join(cwd, targetDir)
 
@@ -95,46 +124,107 @@ async function init() {
 
   render('base')
 
+  render(defaultBundler)
+
+  if (needsConfigFile) {
+    const cf = `${defaultBundler}.config.${defaultBundler === 'rollup' ? 'mjs' : 'ts'}`
+    const src = path.resolve(templateRoot, 'config', cf)
+    const dest = path.resolve(root, cf)
+    fs.copyFileSync(src, dest)
+  }
+
   if (needsTest) {
     render('test')
-  } else {
-    render('default')
+  }
+
+  if (needsTSExecution) {
+    render('env')
   }
 
   fs.renameSync(path.resolve(root, '_gitignore'), path.resolve(root, '.gitignore'))
-
-  const readmeFile = path.resolve(root, 'README.md')
-  let readme = readFile(readmeFile)
-  readme = `# ${packageName}
-
-  ${readme}
-  `
-  writeFile(readmeFile, readme)
 
   const packageFile = path.join(root, `package.json`)
   const pkg = readJsonFile(packageFile)
   pkg.name = packageName
 
+  if (!needsTest) {
+    delete pkg.scripts['test']
+    delete pkg.devDependencies['vitest']
+  }
+
+  if (!needsTSExecution) {
+    delete pkg.scripts['dev']
+    delete pkg.devDependencies['dotenv']
+    delete pkg.devDependencies['esno']
+  }
+
+  if (needsConfigFile && defaultBundler === 'tsup') {
+    pkg.scripts['build'] = 'npm run lint && tsup'
+  }
+
   writeJsonFile(packageFile, pkg)
 
-  console.log(`\nDone. Now run:\n`)
+  if (needsTSExecution || needsConfigFile) {
+    const tsConfigFile = path.join(root, `tsconfig.json`)
+    const tsc = readJsonFile(tsConfigFile)
+    if (needsTSExecution) {
+      tsc.include = [...tsc.include, 'env.d.ts']
+    }
+    if (needsConfigFile && defaultBundler !== 'rollup') {
+      tsc.include = [...tsc.include, `${defaultBundler}.config.ts`]
+    }
+    writeJsonFile(tsConfigFile, tsc)
+  }
 
   const userAgent = process.env.npm_config_user_agent ?? ''
   const pkgManager = /pnpm/.test(userAgent) ? 'pnpm' : /yarn/.test(userAgent) ? 'yarn' : 'npm'
 
+  const readme = `# ${packageName}
+
+A Node.js library starter.
+${
+  needsTSExecution
+    ? `
+## Development
+
+\`\`\`sh
+$ ${getCommand(pkgManager, 'dev')}
+\`\`\`
+`
+    : ''
+}
+## Build
+
+\`\`\`sh
+$ ${getCommand(pkgManager, 'build')}
+\`\`\`
+${
+  needsTest
+    ? `
+## Test
+
+\`\`\`sh
+$ ${getCommand(pkgManager, 'test')}
+\`\`\`
+`
+    : ''
+}`
+
+  writeFile(path.resolve(root, 'README.md'), readme)
+
+  console.log(`\nDone. Now run:\n`)
+
   if (root !== cwd) {
-    console.log(`  cd ${path.relative(cwd, root)}`)
+    const dir = path.relative(cwd, root)
+    console.log(`  cd ${dir.includes(' ') ? `"${dir}"` : dir}`)
   }
-  switch (pkgManager) {
-    case 'yarn':
-      console.log('  yarn')
-      console.log('  yarn dev')
-      break
-    default:
-      console.log(`  ${pkgManager} install`)
-      console.log(`  ${pkgManager} run dev`)
-      break
+
+  console.log(`  ${getCommand(pkgManager, 'install')}`)
+  console.log(`  ${getCommand(pkgManager, 'build')}`)
+  if (needsTest) {
+    console.log(`  ${getCommand(pkgManager, 'test')}`)
   }
+  console.log()
 }
 
 function canSafelyOverwrite(dir) {
