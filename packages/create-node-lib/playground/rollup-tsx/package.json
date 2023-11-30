@@ -1,0 +1,42 @@
+{
+  "name": "rollup-tsx",
+  "version": "1.0.0",
+  "description": "A Node.js library starter",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint --ext .js,.cjs,.mjs,.ts,.cts,.mts src/**",
+    "typecheck": "tsc --noEmit",
+    "dev": "esno -r dotenv/config src/index.ts",
+    "build": "npm run lint && rollup -c rollup.config.mjs"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/node": "^18.18.13",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "esno": "^4.0.0",
+    "prettier": "^3.1.0",
+    "rollup": "^4.6.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "typescript": "^5.3.2"
+  }
+}
