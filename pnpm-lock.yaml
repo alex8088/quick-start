@@ -66,11 +66,11 @@ importers:
   packages/create-node-lib:
     dependencies:
       kolorist:
-        specifier: ^1.5.1
-        version: 1.5.1
+        specifier: ^1.8.0
+        version: 1.8.0
       minimist:
-        specifier: ^1.2.6
-        version: 1.2.6
+        specifier: ^1.2.8
+        version: 1.2.8
       prompts:
         specifier: ^2.4.2
         version: 2.4.2
