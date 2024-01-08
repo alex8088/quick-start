@@ -4,7 +4,7 @@
   "description": "An Electron application with Solid",
   "main": "./out/main/index.js",
   "author": "example.com",
-  "homepage": "https://www.electronjs.org",
+  "homepage": "https://electron-vite.org",
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
@@ -17,20 +17,20 @@
     "build:linux": "npm run build && electron-builder --linux --config"
   },
   "dependencies": {
-    "@electron-toolkit/preload": "^2.0.0",
-    "@electron-toolkit/utils": "^2.0.0"
+    "@electron-toolkit/preload": "^3.0.0",
+    "@electron-toolkit/utils": "^3.0.0"
   },
   "devDependencies": {
-    "@electron-toolkit/eslint-config": "^1.0.1",
-    "@electron-toolkit/eslint-config-prettier": "^1.0.1",
-    "electron": "^25.6.0",
-    "electron-builder": "^24.6.3",
-    "electron-vite": "^1.0.27",
-    "eslint": "^8.47.0",
-    "eslint-plugin-solid": "^0.12.1",
-    "prettier": "^3.0.2",
-    "solid-js": "^1.7.11",
-    "vite": "^4.4.9",
-    "vite-plugin-solid": "^2.7.0"
+    "@electron-toolkit/eslint-config": "^1.0.2",
+    "@electron-toolkit/eslint-config-prettier": "^2.0.0",
+    "electron": "^28.1.1",
+    "electron-builder": "^24.9.1",
+    "electron-vite": "^2.0.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-solid": "^0.13.1",
+    "prettier": "^3.1.1",
+    "solid-js": "^1.8.8",
+    "vite": "^5.0.11",
+    "vite-plugin-solid": "^2.8.0"
   }
 }

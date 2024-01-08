@@ -4,7 +4,7 @@
   "description": "A minimal Electron application with TypeScript",
   "main": "./out/main/index.js",
   "author": "example.com",
-  "homepage": "https://www.electronjs.org",
+  "homepage": "https://electron-vite.org",
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
@@ -20,20 +20,20 @@
     "build:linux": "npm run build && electron-builder --linux --config"
   },
   "dependencies": {
-    "@electron-toolkit/preload": "^2.0.0",
-    "@electron-toolkit/utils": "^2.0.0"
+    "@electron-toolkit/preload": "^3.0.0",
+    "@electron-toolkit/utils": "^3.0.0"
   },
   "devDependencies": {
-    "@electron-toolkit/eslint-config-prettier": "^1.0.1",
-    "@electron-toolkit/eslint-config-ts": "^1.0.0",
+    "@electron-toolkit/eslint-config-prettier": "^2.0.0",
+    "@electron-toolkit/eslint-config-ts": "^1.0.1",
     "@electron-toolkit/tsconfig": "^1.0.1",
-    "@types/node": "^18.17.5",
-    "electron": "^25.6.0",
-    "electron-builder": "^24.6.3",
-    "electron-vite": "^1.0.27",
-    "eslint": "^8.47.0",
-    "prettier": "^3.0.2",
-    "typescript": "^5.1.6",
-    "vite": "^4.4.9"
+    "@types/node": "^18.19.5",
+    "electron": "^28.1.1",
+    "electron-builder": "^24.9.1",
+    "electron-vite": "^2.0.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.11"
   }
 }
