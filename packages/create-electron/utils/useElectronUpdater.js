@@ -6,7 +6,7 @@ module.exports = (packageName) => {
       updaterCacheDirName: `${packageName}-updater`
     },
     dependencies: {
-      'electron-updater': '^6.1.1'
+      'electron-updater': '^6.1.7'
     }
   }
 }
