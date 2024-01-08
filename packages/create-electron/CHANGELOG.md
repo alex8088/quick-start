@@ -1,3 +1,10 @@
+### v1.0.17 (_2024-01-09_)
+
+- chore: esm support
+- chore: bump deps
+- chore: ignore .DS_store
+- chore: update pkg homepage
+
 ### v1.0.16 (_2023-08-20_)
 
 - chore: update dependencies
