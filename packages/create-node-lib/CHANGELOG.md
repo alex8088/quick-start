@@ -1,3 +1,9 @@
+### v1.0.4 (_2024-01-10_)
+
+- refactor: config file
+- perf: support esm
+- chore: bump deps
+
 ### v1.0.3 (_2023-11-30_)
 
 - refactor: more bundler, ts execution and bump deps
