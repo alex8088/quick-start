@@ -20,6 +20,7 @@
   },
   "include": [
     "src",
-    "env.d.ts"
+    "env.d.ts",
+    "rollup.config.ts"
   ]
 }

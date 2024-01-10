@@ -20,6 +20,6 @@
   },
   "include": [
     "src",
-    "unbuild.config.ts"
+    "build.config.ts"
   ]
 }

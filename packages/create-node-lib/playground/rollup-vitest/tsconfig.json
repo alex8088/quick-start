@@ -19,6 +19,7 @@
     "noImplicitReturns": true
   },
   "include": [
-    "src"
+    "src",
+    "rollup.config.ts"
   ]
 }
