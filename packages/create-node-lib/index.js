@@ -127,7 +127,7 @@ async function init() {
   render(defaultBundler)
 
   if (needsConfigFile) {
-    const cf = `${defaultBundler}.config.${defaultBundler === 'rollup' ? 'mjs' : 'ts'}`
+    const cf = `${defaultBundler === 'unbuild' ? 'build' : defaultBundler}.config.ts`
     const src = path.resolve(templateRoot, 'config', cf)
     const dest = path.resolve(root, cf)
     fs.copyFileSync(src, dest)
@@ -170,8 +170,11 @@ async function init() {
     if (needsTSExecution) {
       tsc.include = [...tsc.include, 'env.d.ts']
     }
-    if (needsConfigFile && defaultBundler !== 'rollup') {
-      tsc.include = [...tsc.include, `${defaultBundler}.config.ts`]
+    if (needsConfigFile) {
+      tsc.include = [
+        ...tsc.include,
+        `${defaultBundler === 'unbuild' ? 'build' : defaultBundler}.config.ts`
+      ]
     }
     writeJsonFile(tsConfigFile, tsc)
   }

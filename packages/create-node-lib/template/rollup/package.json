@@ -20,7 +20,7 @@
     "lint": "eslint --ext .js,.cjs,.mjs,.ts,.cts,.mts src/**",
     "typecheck": "tsc --noEmit",
     "dev": "esno -r dotenv/config src/index.ts",
-    "build": "npm run lint && rollup -c rollup.config.mjs",
+    "build": "npm run lint && rollup -c rollup.config.ts --configPlugin typescript",
     "test": "vitest run"
   },
   "devDependencies": {
