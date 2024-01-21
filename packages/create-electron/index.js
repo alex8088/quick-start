@@ -215,7 +215,7 @@ async function init() {
 
   let npmrc = ''
   if (needsMirror) {
-    npmrc = 'ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/\n'
+    npmrc = 'electron_mirror=https://npmmirror.com/mirrors/electron/\n'
   }
 
   if (pkgManager === 'pnpm' && !skip) {
