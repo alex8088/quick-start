@@ -1,3 +1,7 @@
+### v1.0.18 (_2024-01-21_)
+
+- fix: electron mirror not work
+
 ### v1.0.17 (_2024-01-09_)
 
 - chore: esm support
