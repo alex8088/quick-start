@@ -1,7 +1,7 @@
 const getCommand = require('./getCommand')
 
 const descriptions = {
-  vanilla: 'A minimal Electron application',
+  vanilla: 'A minimal Electron application with JavaScript',
   'vanilla-ts': 'A minimal Electron application with TypeScript',
   vue: 'An Electron application with Vue',
   'vue-ts': 'An Electron application with Vue and TypeScript',

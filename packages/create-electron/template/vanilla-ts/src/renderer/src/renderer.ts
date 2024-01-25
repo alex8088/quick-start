@@ -1,4 +1,4 @@
-export function init(): void {
+function init(): void {
   window.addEventListener('DOMContentLoaded', () => {
     doAThing()
   })
@@ -9,7 +9,11 @@ function doAThing(): void {
   replaceText('.electron-version', `Electron v${versions.electron}`)
   replaceText('.chrome-version', `Chromium v${versions.chrome}`)
   replaceText('.node-version', `Node v${versions.node}`)
-  replaceText('.v8-version', `V8 v${versions.v8}`)
+
+  const ipcHandlerBtn = document.getElementById('ipcHandler')
+  ipcHandlerBtn?.addEventListener('click', () => {
+    window.electron.ipcRenderer.send('ping')
+  })
 }
 
 function replaceText(selector: string, text: string): void {
