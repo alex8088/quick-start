@@ -1,6 +1,6 @@
 # vanilla
 
-A minimal Electron application
+A minimal Electron application with JavaScript
 
 ## Recommended IDE Setup
 

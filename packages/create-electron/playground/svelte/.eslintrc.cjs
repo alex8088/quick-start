@@ -7,5 +7,8 @@ module.exports = {
     'plugin:svelte/recommended',
     '@electron-toolkit',
     '@electron-toolkit/eslint-config-prettier'
-  ]
+  ],
+  rules: {
+    'svelte/no-unused-svelte-ignore': 'off'
+  }
 }
