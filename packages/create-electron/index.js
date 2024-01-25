@@ -196,6 +196,9 @@ async function init() {
   let config = readYamlFile(builderConfigFile)
   config.productName = packageName
   config.win.executableName = packageName
+  if (needsMirror) {
+    config.electronDownload = { mirror: 'https://npmmirror.com/mirrors/electron/' }
+  }
   writeYamlFile(builderConfigFile, config)
 
   const packageFile = path.join(root, `package.json`)
@@ -216,6 +219,8 @@ async function init() {
   let npmrc = ''
   if (needsMirror) {
     npmrc = 'electron_mirror=https://npmmirror.com/mirrors/electron/\n'
+    npmrc +=
+      'electron_builder_binaries_mirror=https://npmmirror.com/mirrors/electron-builder-binaries/\n'
   }
 
   if (pkgManager === 'pnpm' && !skip) {
