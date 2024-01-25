@@ -1,3 +1,10 @@
+### v1.0.19 (_2024-01-26_)
+
+- refactor: new hero
+- perf: add build unpacked dir script
+- perf: mirror supports electron-builder
+- chore: bump deps
+
 ### v1.0.18 (_2024-01-21_)
 
 - fix: electron mirror not work
