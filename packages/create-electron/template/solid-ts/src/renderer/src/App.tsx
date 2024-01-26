@@ -3,6 +3,7 @@ import Versions from './components/Versions'
 import electronLogo from './assets/electron.svg'
 
 const App: Component = () => {
+  const ipcHandle = (): void => window.electron.ipcRenderer.send('ping')
   return (
     <>
       <img alt="logo" class="logo" src={electronLogo} />
