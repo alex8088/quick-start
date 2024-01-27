@@ -1,6 +1,6 @@
 {
   "name": "@quick-start/create-electron",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "An easy way to start an Electron project",
   "main": "index.js",
   "bin": {
