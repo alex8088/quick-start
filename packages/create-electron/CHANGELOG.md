@@ -1,3 +1,7 @@
+### v1.0.21 (_2024-01-30_)
+
+fix: node tsconfig should include subdirectories
+
 ### v1.0.20 (_2024-01-27_)
 
 fix: add ipcHandler function to solid-ts template ([#24](https://github.com/alex8088/quick-start/pull/24))
