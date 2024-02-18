@@ -11,7 +11,7 @@ const App: Component = () => {
       <div class="creator">Powered by electron-vite</div>
       <div class="text">
         Build an Electron app with <span class="solid">Solid</span>
-        &nbsp;and <span className="ts">TypeScript</span>
+        &nbsp;and <span class="ts">TypeScript</span>
       </div>
       <p class="tip">Please try pressing <code>F12</code> to open the devTool</p>
       <div class="actions">
