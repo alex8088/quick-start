@@ -1,3 +1,7 @@
+### v1.0.23 (_2024-02-19_)
+
+- chore: update versions component in solid-ts template
+
 ### v1.0.22 (_2024-02-18_)
 
 - fix: solid-ts template missing styles
