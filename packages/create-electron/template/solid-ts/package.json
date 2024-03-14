@@ -2,7 +2,7 @@
   "name": "solid-ts",
   "version": "1.0.0",
   "description": "An Electron application with Solid and TypeScript",
-  "main": "./out/main/index.js",
+  "main": "./out/main/main.js",
   "author": "example.com",
   "homepage": "https://electron-vite.org",
   "scripts": {
