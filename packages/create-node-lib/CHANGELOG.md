@@ -1,3 +1,7 @@
+### v1.0.5 (_2024-03-23_)
+
+- chore: bump deps
+
 ### v1.0.4 (_2024-01-10_)
 
 - refactor: config file
