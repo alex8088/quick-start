@@ -16,7 +16,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "unbuild",
+    "build": "rollup -c rollup.config.ts --configPlugin typescript",
     "test": "vitest run"
   }
 }

@@ -17,6 +17,6 @@
   ],
   "scripts": {
     "dev": "esno -r dotenv/config src/index.ts",
-    "build": "unbuild"
+    "build": "rollup -c rollup.config.ts --configPlugin typescript"
   }
 }
