@@ -1,3 +1,7 @@
+### v1.0.6 (_2024-04-02_)
+
+- fix: rollup config
+
 ### v1.0.5 (_2024-03-23_)
 
 - chore: bump deps
