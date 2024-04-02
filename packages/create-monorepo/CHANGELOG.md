@@ -1,7 +1,11 @@
+### v1.0.5 (_2024-04-02_)
+
+- refactor: use rollup bundler and bump deps
+
 ### v1.0.4 (_2023-11-30_)
 
-- refactor(create-monorepo): unbuild bundler, ts execution and bump deps
-- chore(create-monorepo): bump deps
+- refactor: unbuild bundler, ts execution and bump deps
+- chore: bump deps
 
 ### v1.0.3 (_2023-03-12_)
 
