@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { createRequire } from 'node:module'
 import fs from 'node:fs/promises'
 import { defineConfig } from 'rollup'
@@ -37,7 +38,13 @@ export default defineConfig([
       clean('buildStart', 'dist'),
       resolve(),
       commonjs(),
-      ts({ compilerOptions: { declaration: true, outDir: 'dist/types' } })
+      ts({
+        compilerOptions: {
+          rootDir: 'src',
+          declaration: true,
+          outDir: 'dist/types'
+        }
+      })
     ]
   },
   {
