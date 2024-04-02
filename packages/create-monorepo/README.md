@@ -25,6 +25,6 @@ pnpm i
 - Setup with [pnpm](https://pnpm.io/)
 - Lint with [ESLint](https://eslint.org/)
 - Style with [Prettier](https://prettier.io/)
-- Bundle with [unbuild](https://github.com/unjs/unbuild)
+- Bundle with [rollup](https://github.com/rollup/rollup)
 - Test with [vitest](https://vitest.dev/)
 - TypeScript execution with [tsx](https://github.com/privatenumber/tsx)
