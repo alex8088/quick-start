@@ -1,3 +1,8 @@
+### v1.0.6 (_2024-04-20_)
+
+- perf: use rollup-plugin-rm
+- chore: bump deps
+
 ### v1.0.5 (_2024-04-02_)
 
 - refactor: use rollup bundler and bump deps
