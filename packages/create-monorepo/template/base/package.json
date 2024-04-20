@@ -27,6 +27,7 @@
     "prettier": "^3.2.5",
     "rollup": "^4.13.2",
     "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-rm": "^1.0.2",
     "typescript": "^5.4.3",
     "vitest": "^1.4.0"
   }
