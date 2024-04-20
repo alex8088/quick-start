@@ -1,3 +1,8 @@
+### v1.0.7 (_2024-04-20_)
+
+- perf: use rollup-plugin-rm for rollup template
+- chore: bump deps
+
 ### v1.0.6 (_2024-04-02_)
 
 - fix: rollup config
