@@ -1,5 +1,4 @@
 import { createRequire } from 'node:module'
-import fs from 'node:fs/promises'
 import { defineConfig } from 'rollup'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
