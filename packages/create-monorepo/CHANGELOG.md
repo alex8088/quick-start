@@ -1,3 +1,7 @@
+### v1.0.7 (_2024-04-21_)
+
+- fix: remove useless imports
+
 ### v1.0.6 (_2024-04-20_)
 
 - perf: use rollup-plugin-rm
