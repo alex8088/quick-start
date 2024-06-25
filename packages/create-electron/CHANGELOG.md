@@ -1,3 +1,8 @@
+### v1.0.24 (_2024-06-25_)
+
+- fix: remove ts code in vue js template ([#37](https://github.com/alex8088/quick-start/pull/37))
+- chore: bump deps
+
 ### v1.0.23 (_2024-02-19_)
 
 - chore: update versions component in solid-ts template
