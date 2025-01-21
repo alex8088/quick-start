@@ -1,4 +1,5 @@
 node_modules
 dist
+.eslintcache
 .env*
 *.log*

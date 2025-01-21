@@ -24,7 +24,7 @@ export default defineConfig([
         compilerOptions: {
           rootDir: 'src',
           declaration: true,
-          outDir: 'dist/types'
+          declarationDir: 'dist/types'
         }
       })
     ]
