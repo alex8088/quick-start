@@ -7,7 +7,7 @@
   "homepage": "https://electron-vite.org",
   "scripts": {
     "format": "prettier --write .",
-    "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
+    "lint": "eslint --cache .",
     "start": "electron-vite preview",
     "dev": "electron-vite dev",
     "build": "electron-vite build",
@@ -22,14 +22,14 @@
     "@electron-toolkit/utils": "^3.0.0"
   },
   "devDependencies": {
-    "@electron-toolkit/eslint-config": "^1.0.2",
-    "@electron-toolkit/eslint-config-prettier": "^2.0.0",
+    "@electron-toolkit/eslint-config": "^2.0.0",
+    "@electron-toolkit/eslint-config-prettier": "^3.0.0",
     "electron": "^31.0.2",
     "electron-builder": "^24.13.3",
     "electron-vite": "^2.3.0",
-    "eslint": "^8.57.0",
-    "eslint-plugin-solid": "^0.14.1",
-    "prettier": "^3.3.2",
+    "eslint": "^9.20.1",
+    "eslint-plugin-solid": "^0.14.5",
+    "prettier": "^3.5.1",
     "solid-js": "^1.8.17",
     "vite": "^5.3.1",
     "vite-plugin-solid": "^2.10.2"
