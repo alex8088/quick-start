@@ -21,24 +21,24 @@
     "build:linux": "npm run build && electron-builder --linux"
   },
   "dependencies": {
-    "@electron-toolkit/preload": "^3.0.0",
-    "@electron-toolkit/utils": "^3.0.0"
+    "@electron-toolkit/preload": "^3.0.1",
+    "@electron-toolkit/utils": "^4.0.0"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config-prettier": "3.0.0",
     "@electron-toolkit/eslint-config-ts": "^3.0.0",
     "@electron-toolkit/tsconfig": "^1.0.1",
-    "@types/node": "^20.14.8",
-    "@vitejs/plugin-vue": "^5.0.5",
-    "electron": "^31.0.2",
-    "electron-builder": "^24.13.3",
-    "electron-vite": "^2.3.0",
+    "@types/node": "^22.13.4",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "electron": "^34.2.0",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^3.0.0",
     "eslint": "^9.20.1",
     "eslint-plugin-vue": "^9.32.0",
     "prettier": "^3.5.1",
-    "typescript": "^5.5.2",
-    "vite": "^5.3.1",
-    "vue": "^3.4.30",
-    "vue-tsc": "^2.0.22"
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0",
+    "vue": "^3.5.13",
+    "vue-tsc": "^2.2.2"
   }
 }
