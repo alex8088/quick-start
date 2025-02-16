@@ -127,7 +127,7 @@ async function init() {
       {
         name: 'needsMirror',
         type: () => (skip ? null : 'toggle'),
-        message: 'Enable Electron download mirror proxy?',
+        message: 'Enable Electron download mirror proxy for Mainland China?',
         initial: false,
         active: 'Yes',
         inactive: 'No'
