@@ -1,3 +1,13 @@
+### v1.0.25 (_2025-02-17_)
+
+- feat: move to eslint flat config
+- feat: svelte 5
+- fix: typo ([#41](https://github.com/alex8088/quick-start/pull/41))
+- fix: format
+- fix: tsconfig not work in svelte ts template
+- fix: type check error in vue ts template
+- chore: bump deps
+
 ### v1.0.24 (_2024-06-25_)
 
 - fix: remove ts code in vue js template ([#37](https://github.com/alex8088/quick-start/pull/37))
