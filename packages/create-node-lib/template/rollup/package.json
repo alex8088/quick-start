@@ -25,23 +25,23 @@
     "test": "vitest run"
   },
   "devDependencies": {
-    "@eslint/js": "^9.17.0",
-    "@rollup/plugin-commonjs": "^28.0.2",
-    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@eslint/js": "^9.22.0",
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-typescript": "^12.1.2",
-    "@types/node": "^22.10.7",
+    "@types/node": "^22.13.10",
     "dotenv": "^16.4.7",
-    "eslint": "^9.18.0",
-    "eslint-config-prettier": "^9.1.0",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-prettier": "^5.2.3",
     "esno": "^4.8.0",
-    "globals": "^15.14.0",
-    "prettier": "^3.4.2",
-    "rollup": "^4.31.0",
-    "rollup-plugin-dts": "^6.1.1",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.3",
+    "rollup": "^4.36.0",
+    "rollup-plugin-dts": "^6.2.0",
     "rollup-plugin-rm": "^1.0.2",
-    "typescript": "^5.7.3",
-    "typescript-eslint": "^8.21.0",
-    "vitest": "^3.0.3"
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.1",
+    "vitest": "^3.0.9"
   }
 }
