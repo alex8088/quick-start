@@ -22,14 +22,8 @@ function getRecommendedIDESetup(template) {
   const eslintLink = getCodeExtensionLink('ESLint', 'dbaeumer.vscode-eslint')
   const prettierLink = getCodeExtensionLink('Prettier', 'esbenp.prettier-vscode')
   const links = [vscodeLink, eslintLink, prettierLink]
-  if (template === 'vue') {
+  if (template === 'vue' || template === 'vue-ts') {
     links.push(getCodeExtensionLink('Volar', 'Vue.volar'))
-  }
-  if (template === 'vue-ts') {
-    links.push(getCodeExtensionLink('Volar', 'Vue.volar'))
-    links.push(
-      getCodeExtensionLink('TypeScript Vue Plugin (Volar)', 'Vue.vscode-typescript-vue-plugin')
-    )
   }
   if (template === 'svelte' || template === 'svelte-ts') {
     links.push(getCodeExtensionLink('Svelte', 'svelte.svelte-vscode'))
