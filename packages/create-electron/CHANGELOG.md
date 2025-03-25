@@ -1,3 +1,8 @@
+### v1.0.26 (_2025-03-25_)
+
+- chore: update vue ts tempalte readme
+- chore: bump deps
+
 ### v1.0.25 (_2025-02-17_)
 
 - feat: move to eslint flat config
