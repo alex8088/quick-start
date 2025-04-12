@@ -25,14 +25,14 @@
     "@electron-toolkit/eslint-config": "^2.0.0",
     "@electron-toolkit/eslint-config-prettier": "^3.0.0",
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
-    "electron": "^35.0.3",
+    "electron": "^35.1.5",
     "electron-builder": "^25.1.8",
     "electron-vite": "^3.1.0",
-    "eslint": "^9.23.0",
+    "eslint": "^9.24.0",
     "eslint-plugin-svelte": "^2.46.1",
     "prettier": "^3.5.3",
     "prettier-plugin-svelte": "^3.3.3",
-    "svelte": "^5.25.3",
-    "vite": "^6.2.3"
+    "svelte": "^5.26.1",
+    "vite": "^6.2.6"
   }
 }
