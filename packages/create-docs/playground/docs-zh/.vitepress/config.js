@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 
 /**
  * @type {import('vitepress').DefaultTheme.Sidebar}
@@ -143,5 +144,15 @@ export default defineConfig({
     },
     nav,
     sidebar
+  },
+  markdown: {
+    config(md) {
+      md.use(groupIconMdPlugin)
+    }
+  },
+  vite: {
+    plugins: [
+      groupIconVitePlugin()
+    ]
   }
 })
