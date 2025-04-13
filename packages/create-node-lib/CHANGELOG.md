@@ -1,3 +1,8 @@
+### v1.0.11 (_2025-04-13_)
+
+- chore: update eslint rules
+- chore: bump deps
+
 ### v1.0.11 (_2025-03-19_)
 
 - chore: bump deps

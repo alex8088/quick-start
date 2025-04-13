@@ -1,6 +1,6 @@
 {
   "name": "@quick-start/create-node-lib",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "An easy way to start a Node.js library",
   "main": "index.js",
   "bin": {
