@@ -9,7 +9,7 @@
     "serve": "vitepress serve"
   },
   "devDependencies": {
-    "vitepress": "1.0.0-rc.29"
+    "vitepress": "^1.6.3"
   },
   "pnpm": {
     "peerDependencyRules": {

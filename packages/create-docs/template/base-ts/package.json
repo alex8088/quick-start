@@ -9,8 +9,8 @@
     "serve": "vitepress serve"
   },
   "devDependencies": {
-    "@types/node": "^18.18.10",
-    "vitepress": "1.0.0-rc.29"
+    "@types/node": "^22.14.1",
+    "vitepress": "^1.6.3"
   },
   "pnpm": {
     "peerDependencyRules": {
