@@ -1,3 +1,8 @@
+### v1.0.5 (_2025-04-13_)
+
+- chore: add vitepress-plugin-group-icons
+- chore: bump deps
+
 ### v1.0.4 (_2023-11-19_)
 
 - refactor: theme, locales, internationalization and more templates
