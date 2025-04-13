@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import zh from './zh'
 
 /**
@@ -85,5 +86,15 @@ export default defineConfig({
     },
     nav,
     sidebar
+  },
+  markdown: {
+    config(md) {
+      md.use(groupIconMdPlugin)
+    }
+  },
+  vite: {
+    plugins: [
+      groupIconVitePlugin()
+    ]
   }
 })

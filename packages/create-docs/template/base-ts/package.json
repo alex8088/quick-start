@@ -10,7 +10,8 @@
   },
   "devDependencies": {
     "@types/node": "^22.14.1",
-    "vitepress": "^1.6.3"
+    "vitepress": "^1.6.3",
+    "vitepress-plugin-group-icons": "^1.4.1"
   },
   "pnpm": {
     "peerDependencyRules": {
