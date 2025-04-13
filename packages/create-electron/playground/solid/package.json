@@ -24,14 +24,20 @@
   "devDependencies": {
     "@electron-toolkit/eslint-config": "^2.0.0",
     "@electron-toolkit/eslint-config-prettier": "^3.0.0",
-    "electron": "^35.0.3",
+    "electron": "^35.1.5",
     "electron-builder": "^25.1.8",
     "electron-vite": "^3.1.0",
-    "eslint": "^9.23.0",
+    "eslint": "^9.24.0",
     "eslint-plugin-solid": "^0.14.5",
     "prettier": "^3.5.3",
     "solid-js": "^1.9.5",
-    "vite": "^6.2.3",
+    "vite": "^6.2.6",
     "vite-plugin-solid": "^2.11.6"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "esbuild"
+    ]
   }
 }

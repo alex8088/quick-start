@@ -28,16 +28,22 @@
     "@electron-toolkit/eslint-config-prettier": "^3.0.0",
     "@electron-toolkit/eslint-config-ts": "^3.0.0",
     "@electron-toolkit/tsconfig": "^1.0.1",
-    "@types/node": "^22.13.13",
-    "electron": "^35.0.3",
+    "@types/node": "^22.14.1",
+    "electron": "^35.1.5",
     "electron-builder": "^25.1.8",
     "electron-vite": "^3.1.0",
-    "eslint": "^9.23.0",
+    "eslint": "^9.24.0",
     "eslint-plugin-solid": "^0.14.5",
     "prettier": "^3.5.3",
     "solid-js": "^1.9.5",
-    "typescript": "^5.8.2",
-    "vite": "^6.2.3",
+    "typescript": "^5.8.3",
+    "vite": "^6.2.6",
     "vite-plugin-solid": "^2.11.6"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron",
+      "esbuild"
+    ]
   }
 }
