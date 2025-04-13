@@ -1,3 +1,13 @@
+### v1.0.27 (_2025-04-13_)
+
+- feat: add onlyBuiltDependencies for pnpm in package.json
+- perf: improve electron-builder config
+- chore: update svelte electron-builder config
+- chore: update react to v19
+- chore: update eslint-plugin-vue to v10
+- chore: update eslint-plugin-svelte to v3
+- chore: bump deps
+
 ### v1.0.26 (_2025-03-25_)
 
 - chore: update vue ts tempalte readme
