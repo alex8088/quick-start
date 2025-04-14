@@ -1,3 +1,7 @@
+### v1.0.9 (_2025-04-14_)
+
+- chore: bump deps
+
 ### v1.0.8 (_2024-06-25_)
 
 - chore: bump deps
