@@ -60,7 +60,7 @@ export default tseslint.config(
     }
   },
   {
-    files: ['*.js', '*.mjs'],
+    files: ['**/*.js', '**/*.mjs'],
     rules: {
       '@typescript-eslint/explicit-function-return-type': 'off'
     }
