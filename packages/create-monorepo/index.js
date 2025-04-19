@@ -202,7 +202,7 @@ $ pnpm test:foo
     writeJsonFile(tsConfigFile, tsc)
   }
 
-  writeFile(path.resolve(root, '.npmrc'), 'shamefully-hoist=true\n')
+  writeFile(path.resolve(root, '.npmrc'), 'shamefully-hoist=true\nauto-install-peers=false\n')
 
   console.log(`\nDone. Now run:\n`)
 
