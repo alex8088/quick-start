@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { createRequire } from 'node:module'
 import { defineConfig } from 'rollup'
 import resolve from '@rollup/plugin-node-resolve'
@@ -25,7 +24,7 @@ export default defineConfig([
         compilerOptions: {
           rootDir: 'src',
           declaration: true,
-          outDir: 'dist/types'
+          declarationDir: 'dist/types'
         }
       })
     ]

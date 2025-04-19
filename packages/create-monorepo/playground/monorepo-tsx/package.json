@@ -5,8 +5,8 @@
   "description": "A monorepo starter",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "format": "prettier --write .",
-    "lint": "eslint --ext .ts packages/*/src/**",
+    "format": "prettier --write --cache .",
+    "lint": "eslint --cache .",
     "typecheck": "tsc --noEmit",
     "dev:foo": "pnpm run -C packages/foo dev",
     "build:foo": "pnpm run -C packages/foo build"
