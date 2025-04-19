@@ -1,3 +1,11 @@
+### v1.0.10 (_2025-04-19_)
+
+- feat: disable auto install peer deps
+- fix eslint rules
+- fix: update lint and format command
+- fix: build dts failed
+- chore: bump deps
+
 ### v1.0.9 (_2025-04-14_)
 
 - chore: bump deps
