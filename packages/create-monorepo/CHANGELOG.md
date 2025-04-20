@@ -1,3 +1,7 @@
+### v1.0.11 (_2025-04-20_)
+
+- feat: set the type field to 'module'
+
 ### v1.0.10 (_2025-04-19_)
 
 - feat: disable auto install peer deps
