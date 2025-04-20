@@ -2,6 +2,7 @@
   "name": "@monorepo/foo",
   "version": "1.0.0",
   "description": "A minimal typescript library.",
+  "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
