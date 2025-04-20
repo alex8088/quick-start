@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "A monorepo starter",
+  "type": "module",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "format": "prettier --write --cache .",
