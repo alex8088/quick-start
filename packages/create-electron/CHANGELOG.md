@@ -1,3 +1,7 @@
+### v1.0.28 (_2025-07-20_)
+
+- chore: bump deps
+
 ### v1.0.27 (_2025-04-13_)
 
 - feat: add onlyBuiltDependencies for pnpm in package.json
