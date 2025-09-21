@@ -1,3 +1,8 @@
+### v1.0.12 (_2025-09-21_)
+
+- refactor: use tsx instead of esno
+- chore: bump deps
+
 ### v1.0.11 (_2025-04-20_)
 
 - feat: set the type field to 'module'

@@ -1,6 +1,6 @@
 {
   "name": "@quick-start/create-monorepo",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "An easy way to start a monorepo project",
   "main": "index.js",
   "bin": {
