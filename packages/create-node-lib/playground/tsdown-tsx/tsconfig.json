@@ -21,6 +21,6 @@
   "include": [
     "src",
     "env.d.ts",
-    "rollup.config.ts"
+    "tsdown.config.ts"
   ]
 }

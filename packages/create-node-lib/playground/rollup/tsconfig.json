@@ -9,7 +9,7 @@
     "strict": true,
     "allowJs": true,
     "esModuleInterop": true,
-    "moduleResolution": "Bundler",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,

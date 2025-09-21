@@ -1,15 +1,15 @@
 {
-  "name": "rollup-tsx",
+  "name": "tsdown-vitest",
   "version": "1.0.0",
   "description": "A Node.js library starter",
   "type": "module",
   "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
+      "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     }
   },
@@ -20,26 +20,20 @@
     "format": "prettier --write .",
     "lint": "eslint --cache .",
     "typecheck": "tsc --noEmit",
-    "dev": "tsx --env-file=.env src/index.ts",
-    "build": "npm run typecheck && rollup -c rollup.config.ts --configPlugin typescript"
+    "build": "npm run typecheck && tsdown",
+    "test": "vitest run"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
-    "@rollup/plugin-commonjs": "^28.0.3",
-    "@rollup/plugin-node-resolve": "^16.0.1",
-    "@rollup/plugin-typescript": "^12.1.4",
     "@types/node": "^22.18.6",
     "eslint": "^9.36.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "globals": "^16.4.0",
     "prettier": "^3.6.2",
-    "rollup": "^4.52.0",
-    "rollup-plugin-dts": "^6.2.3",
-    "rollup-plugin-rm": "^1.0.2",
-    "tslib": "^2.8.1",
-    "tsx": "^4.20.5",
+    "tsdown": "^0.15.4",
     "typescript": "^5.9.2",
-    "typescript-eslint": "^8.44.0"
+    "typescript-eslint": "^8.44.0",
+    "vitest": "^3.2.4"
   }
 }
