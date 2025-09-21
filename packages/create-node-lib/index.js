@@ -86,7 +86,7 @@ async function init() {
       {
         name: 'needsTSExecution',
         type: () => (skip || runTS ? null : 'toggle'),
-        message: 'Add TypeScript Execution(tsx/esno)?',
+        message: 'Add TypeScript Execution(tsx)?',
         initial: false,
         active: 'Yes',
         inactive: 'No'
@@ -154,8 +154,7 @@ async function init() {
 
   if (!needsTSExecution) {
     delete pkg.scripts['dev']
-    delete pkg.devDependencies['dotenv']
-    delete pkg.devDependencies['esno']
+    delete pkg.devDependencies['tsx']
   }
 
   if (needsConfigFile && defaultBundler === 'tsup') {
