@@ -33,7 +33,7 @@
     "electron": "^37.2.3",
     "electron-builder": "^25.1.8",
     "electron-vite": "^4.0.0",
-    "eslint": "^9.31.0",
+    "eslint": "^9.36.0",
     "eslint-plugin-svelte": "^3.11.0",
     "prettier": "^3.6.2",
     "prettier-plugin-svelte": "^3.4.0",

@@ -32,7 +32,7 @@
     "electron": "^37.2.3",
     "electron-builder": "^25.1.8",
     "electron-vite": "^4.0.0",
-    "eslint": "^9.31.0",
+    "eslint": "^9.36.0",
     "prettier": "^3.6.2",
     "typescript": "^5.8.3",
     "vite": "^7.0.5"
