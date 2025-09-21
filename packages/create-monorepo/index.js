@@ -73,7 +73,7 @@ async function init() {
       {
         name: 'needsTSExecution',
         type: () => (skip || runTS ? null : 'toggle'),
-        message: 'Add TypeScript execution(tsx/esno)?',
+        message: 'Add TypeScript execution(tsx)?',
         initial: false,
         active: 'Yes',
         inactive: 'No'
@@ -142,8 +142,7 @@ A monorepo starter
 
   if (!needsTSExecution) {
     delete pkg.scripts['dev:foo']
-    delete pkg.devDependencies['dotenv']
-    delete pkg.devDependencies['esno']
+    delete pkg.devDependencies['tsx']
   }
 
   writeJsonFile(packageFile, pkg)
