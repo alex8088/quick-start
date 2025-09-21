@@ -1,4 +1,9 @@
-### v1.0.11 (_2025-04-13_)
+### v1.0.13 (_2025-09-21_)
+
+- refactor: use `tsdown` bundler and remove `tsup` and `unbuild` bundlers
+- refactor: use tsx instead of esno
+
+### v1.0.12 (_2025-04-13_)
 
 - chore: update eslint rules
 - chore: bump deps
