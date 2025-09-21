@@ -9,7 +9,7 @@ const { copy, emptyDir, readJsonFile, writeJsonFile, writeFile } = require('./ut
 const getCommand = require('./utils/getCommand')
 
 const DEFAULT_PRO_NAME = 'my-node-lib'
-const BUNDLERS = ['unbuild', 'tsup', 'rollup']
+const BUNDLERS = ['rollup', 'tsdown']
 
 async function init() {
   const argv = minimist(process.argv.slice(2), { string: [0] })
@@ -17,7 +17,6 @@ async function init() {
 
   let targetDir = argv._[0]
   let bundler = argv.bundler || ''
-  let useConfigFile = argv.useConfigFile || false
   let test = argv.test || false
   let runTS = argv.runTS || false
 
@@ -67,15 +66,6 @@ async function init() {
         choices: BUNDLERS.map((bundler) => ({ title: bundler, value: bundler }))
       },
       {
-        name: 'needsConfigFile',
-        type: (defaultBundler) =>
-          skip || useConfigFile || defaultBundler === 'rollup' ? null : 'toggle',
-        message: 'Add config file?',
-        initial: false,
-        active: 'Yes',
-        inactive: 'No'
-      },
-      {
         name: 'needsTest',
         type: () => (skip || test ? null : 'toggle'),
         message: 'Add test?',
@@ -101,7 +91,6 @@ async function init() {
     shouldOverwrite = skip,
     packageName = targetDir,
     defaultBundler = bundler,
-    needsConfigFile = useConfigFile || defaultBundler === 'rollup',
     needsTest = test,
     needsTSExecution = runTS
   } = result
@@ -125,13 +114,6 @@ async function init() {
   render('base')
 
   render(defaultBundler)
-
-  if (needsConfigFile) {
-    const cf = `${defaultBundler === 'unbuild' ? 'build' : defaultBundler}.config.ts`
-    const src = path.resolve(templateRoot, 'config', cf)
-    const dest = path.resolve(root, cf)
-    fs.copyFileSync(src, dest)
-  }
 
   if (needsTest) {
     render('test')
@@ -157,26 +139,16 @@ async function init() {
     delete pkg.devDependencies['tsx']
   }
 
-  if (needsConfigFile && defaultBundler === 'tsup') {
-    pkg.scripts['build'] = 'npm run lint && tsup'
-  }
-
   writeJsonFile(packageFile, pkg)
 
-  if (needsTSExecution || needsConfigFile) {
-    const tsConfigFile = path.join(root, `tsconfig.json`)
-    const tsc = readJsonFile(tsConfigFile)
-    if (needsTSExecution) {
-      tsc.include = [...tsc.include, 'env.d.ts']
-    }
-    if (needsConfigFile) {
-      tsc.include = [
-        ...tsc.include,
-        `${defaultBundler === 'unbuild' ? 'build' : defaultBundler}.config.ts`
-      ]
-    }
-    writeJsonFile(tsConfigFile, tsc)
+  const tsConfigFile = path.join(root, `tsconfig.json`)
+  const tsc = readJsonFile(tsConfigFile)
+  if (needsTSExecution) {
+    tsc.include.push('env.d.ts')
   }
+  tsc.include.push(`${defaultBundler}.config.ts`)
+
+  writeJsonFile(tsConfigFile, tsc)
 
   const userAgent = process.env.npm_config_user_agent ?? ''
   const pkgManager = /pnpm/.test(userAgent) ? 'pnpm' : /yarn/.test(userAgent) ? 'yarn' : 'npm'
