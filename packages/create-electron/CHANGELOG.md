@@ -1,3 +1,7 @@
+### v1.0.30 (_2025-12-07_)
+
+- chore: bump deps
+
 ### v1.0.29 (_2025-09-21_)
 
 - fix: use ESlint core's `defineConfig`
