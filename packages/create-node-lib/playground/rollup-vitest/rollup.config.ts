@@ -23,6 +23,7 @@ export default defineConfig([
       ts({
         compilerOptions: {
           rootDir: 'src',
+          outDir: 'dist',
           declaration: true,
           declarationDir: 'dist/types'
         }
