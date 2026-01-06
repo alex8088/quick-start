@@ -1,3 +1,8 @@
+### v1.0.14 (_2026-01-06_)
+
+- fix: resolve @rollup/plugin-typescript outDir mismatch
+- chore: bump deps
+
 ### v1.0.13 (_2025-09-21_)
 
 - refactor: use `tsdown` bundler and remove `tsup` and `unbuild` bundlers
