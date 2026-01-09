@@ -1,7 +1,7 @@
 appId: com.electron.app
 productName: app
 directories:
-  buildResources: build
+  buildResources: buildres
 files:
   - '!**/.vscode/*'
   - '!src/*'
@@ -18,7 +18,7 @@ nsis:
   uninstallDisplayName: ${productName}
   createDesktopShortcut: always
 mac:
-  entitlementsInherit: build/entitlements.mac.plist
+  entitlementsInherit: buildres/entitlements.mac.plist
   extendInfo:
     - NSCameraUsageDescription: Application requests access to the device's camera.
     - NSMicrophoneUsageDescription: Application requests access to the device's microphone.
