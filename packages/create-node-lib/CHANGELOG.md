@@ -1,3 +1,7 @@
+### v1.0.15 (_2026-10-15_)
+
+- chore: bump deps
+
 ### v1.0.14 (_2026-01-06_)
 
 - fix: resolve @rollup/plugin-typescript outDir mismatch
