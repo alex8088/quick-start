@@ -1,3 +1,9 @@
+### v1.0.31 (_2026-10-15_)
+
+- fix: remove pnpm `onlyBuiltDependencies`
+- fix: post install Electron
+- chore: bump deps
+
 ### v1.0.30 (_2025-12-07_)
 
 - chore: bump deps
