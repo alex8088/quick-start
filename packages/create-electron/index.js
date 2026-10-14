@@ -214,12 +214,6 @@ async function init() {
   const userAgent = process.env.npm_config_user_agent ?? ''
   const pkgManager = /pnpm/.test(userAgent) ? 'pnpm' : /yarn/.test(userAgent) ? 'yarn' : 'npm'
 
-  if (pkgManager === 'pnpm') {
-    pkg['pnpm'] = {
-      onlyBuiltDependencies: ['electron', 'esbuild']
-    }
-  }
-
   writeJsonFile(packageFile, sortDependencies(pkg))
 
   let npmrc = ''
